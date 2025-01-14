@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Café Menu</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1ede6; /* Light cream background */
+            color: #866e4f; /* Dark brown text color */
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            background-color: #6a4e23; /* Dark brown for the nav */
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .top-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1em;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .top-nav a:hover {
+            background-color: #caa772; /* Light brown on hover */
+        }
+
+        /* Left Picture */
+        .left-picture {
+            position: fixed;
+            top: 220px; /* Adjust for top nav */
+            left: 0;
+            width: 237px; /* Adjust width */
+            height: calc(100% - 200px); /* Adjust height dynamically */
+            overflow: hidden;
+            z-index: 999;
+        }
+
+        .left-picture img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Header Below Navigation */
+        header {
+            background-image: url('image menu/header.jpg'); /* Replace with the actual path to your image */
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            font-size: 3em;
+            text-transform: uppercase;
+            font-family: 'Georgia', serif;
+            letter-spacing: 2px;
+            margin-top: 80px; /* Space for top nav */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Sidebar Navigation */
+        nav {
+            background-color: #6a4e23; /* Dark brown sidebar */
+            width: 220px;
+            position: fixed;
+            top: 80px; /* Avoid overlap with top navigation */
+            left: 0;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 15px 0;
+            font-size: 1.2em;
+            padding: 12px 20px;
+            text-align: left;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        nav a:hover {
+            background-color: #8e6e3f; /* Light brown on hover */
+        }
+
+        /* Content Section */
+        .container {
+            margin-left: 240px; /* Avoid sidebar overlap */
+            margin-top: 80px; /* Space for top nav */
+            max-width: 1200px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Section Styles */
+        h2 {
+            color: #8e6e3f; /* Brown color for section headers */
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Georgia', serif;
+            font-size: 2em;
+        }
+
+        .menu-section {
+            margin-bottom: 40px;
+        }
+
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        /* Menu Item */
+        .menu-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-item img {
+            max-width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .menu-item h3 {
+            margin: 10px 0;
+            color: #6a4e23;
+            font-size: 1.5em;
+            font-family: 'Georgia', serif;
+        }
+
+        .menu-item p {
+            font-size: 1em;
+            color: #6a4e23;
+        }
+
+        .menu-item .price {
+            font-weight: bold;
+            color: #8e6e3f;
+            margin-top: 10px;
+            font-size: 1.2em;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6a4e23;
+            color: white;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Navigation -->
+    <div class="top-nav">
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+    </div>
+
+    <!-- Left Picture -->
+    <div class="left-picture">
+        <img src="image menu/decorative-.png" alt="Decorative Image">
+    </div>
+
+    <!-- Header with Café Name -->
+    <header>
+        Lumiere Café 
+    </header>
+
+        <div class="container">
+        <!-- Main Courses Section -->
+        <section id="main-courses" >
+            <h2>Main Courses</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <a href="image menu/Chicken Futtuccine Alfredo.png" target="_blank">
+                        <img src="image menu/Chicken Futtuccine Alfredo.png" alt="Nasi Lemak">
+                    </a>                    
+                    <h3>Chicken Futtuccine Alfredo</h3>
+                    <p>Topped with perfectly grilled chicken slices and garnished with fresh parsley for a touch of freshness.</p>
+                    <p class="price">RM 16.00</p>
+                </div>
+                <div class="menu-item">
+                    <a href="image menu/Lobster_Mac & Cheese.png" target="_blank">
+                        <img src="image menu/Lobster_Mac & Cheese.png" alt="Nasi Lemak">
+                    </a>                    
+                    <h3>Lobster Mac & Cheese</h3>
+                    <p>A rich and indulgent dish that combines creamy, cheesy macaroni with succulent lobster meat.</p>
+                    <p class="price">RM 24.00</p>
+                </div>
+                <div class="menu-item">
+                    <a href="image menu/Classic_Steak_with_Creamy_Mashed_Potatoes.png" target="_blank">
+                        <img src="image menu/Classic_Steak_with_Creamy_Mashed_Potatoes.png" alt="Nasi Lemak">
+                    </a>                    
+                    <h3>Classic Steak with Creamy Mashed Potatoes</h3>
+                    <p>A timeless, comforting dish featuring a perfectly cooked steak paired with velvety, creamy mashed potatoes</p>
+                    <p class="price">RM 38.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Desserts Section -->
+        <section id="desserts" >
+            <h2>Desserts</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="image menu/Roasted_Fig & Ricotta_Tart.png" alt="Cake">
+                    <h3>Roasted Fig & Ricotta Tart</h3>
+                    <p>A tart made with a flaky, buttery crust, filled with a creamy ricotta filling, and topped with sweet, caramelized roasted figs.</p>
+                    <p class="price">RM 13.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="image menu/Salted_Caramel_ & Pretzel_Ice_Cream.png" alt="Ice Cream">
+                    <h3> Salted Caramel & Pretzel Ice Cream</h3>
+                    <p>A sweet and salty flavor combination with smooth salted caramel ice cream, complemented by crunchy, salty pretzels.</p>
+                    <p class="price">RM 18.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="image menu/Miso_Caramel_Bread_Pudding-.png" alt="Ice Cream">
+                    <h3> Miso Caramel Bread Pudding</h3>
+                    <p>A rich bread pudding drizzled with a savory-sweet miso caramel sauce, creating a balance of flavors that’s unexpected yet delicious</p>
+                    <p class="price">RM 24.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="image menu/Strawberry_Mini_Pavlova_Nests.png" alt="Ice Cream">
+                    <h3> Strawberry Mini Pavlova Nests</h3>
+                    <p>
+                        Delicate mini pavlova nests with a crisp shell and soft, marshmallow-like center, topped with fresh strawberries, whipped cream, and strawberry sauce.</p>
+                    <p class="price">RM 12.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="image menu/Olive_Oil & Sea_Salt_Brownies.png" alt="Ice Cream">
+                    <h3> Olive Oil & Sea Salt Brownies</h3>
+                    <p>A rich and fudgy brownie made with high-quality olive oil, topped with a sprinkle of flaky sea salt for a savory twist</p>
+                    <p class="price">RM 10.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="image menu/Ube_Halaya_Crepe_Cake.png" alt="Ice Cream">
+                    <h3> Ube Halaya Crepe Cake</h3>
+                    <p>AA multi-layered crepe cake made with vibrant purple ube halaya (sweet purple yam), creating a colorful and sweet dessert.</p>
+                    <p class="price">RM 16.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="image menu/Respberry_Pistachi_Roll_Cake.png" alt="Ice Cream">
+                    <h3> Respberry Pistachi Roll Cake</h3>
+                    <p>A light and fluffy sponge cake rolled with pistachio cream and fresh raspberry filling, creating a delightful balance of nutty and tangy flavors.</p>
+                    <p class="price">RM 25.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="image menu/Black_Forest_Verrine-.png" alt="Ice Cream">
+                    <h3> Black Forest Verrine</h3>
+                    <p>A modern take on Black Forest cake, layered in a glass with chocolate mousse, cherry compote, whipped cream, and crumbled chocolate cake for a rich and elegant treat.</p>
+                    <p class="price">RM 13.00</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Drinks Section -->
+        <section id="drinks">
+            <h2>Drinks</h2>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="images/coffee.jpg" alt="Coffee">
+                    <h3>Classic Coffee</h3>
+                    <p>Rich and aromatic brewed coffee.</p>
+                    <p class="price">RM 10.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/teh-ais.jpg" alt="Teh Ais">
+                    <h3>Teh Ais</h3>
+                    <p>Refreshing iced tea with a local twist.</p>
+                    <p class="price">RM 8.00</p>
+                </div>
+                <div class="menu-item">
+                    <img src="images/smoothie.jpg" alt="Smoothie">
+                    <h3>Fruit Smoothie</h3>
+                    <p>A blend of fresh fruits and yogurt.</p>
+                    <p class="price">RM 12.00</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        &copy; 2025 Lumiera Café | Designed by <a href="#">Meera</a>
+    </footer>
+</body>
+</html>
