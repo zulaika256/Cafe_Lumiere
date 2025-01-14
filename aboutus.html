@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Café</title>
+    <style>
+       
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f7f3;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(to right, #6c5b4c, #8c7058);
+            color: #fff;
+           
+        }
+        .header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .header p {
+            font-size: 1.3em;
+            margin-top: 10px;
+            font-style: italic;
+            color: #e1cebdc7;
+        }
+
+        
+        .about-container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+         
+        }
+        .about-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: center;
+        }
+        .about-col {
+            flex: 1 1 45%;
+            position: relative;
+        }
+        .about-text h2 {
+            font-size: 2.8em;
+            color: #6c5b4c;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+        }
+        .about-text p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .about-text button {
+            padding: 12px 30px;
+            background: linear-gradient(to right, #6c5b4c, #8c7058);
+            color: #fff;
+            border: none;
+            border-radius: 30px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .about-text button:hover {
+            background: linear-gradient(to left, #6c5b4c, #8c7058);
+        }
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(79, 51, 13, 0.66);
+        }
+        .logo-container {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 20px;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .logo-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .logo-text {
+            flex: 1 1 55%;
+            position: relative;
+            padding-right: 20px;
+        }
+
+        .logo-text h2 {
+            font-size: 2.8em;
+            color: #6c5b4c;
+            margin-bottom: 20px;
+            text-transform: capitalize;
+            font-weight: bold;
+        }
+
+        .logo-text ul {
+            list-style:disc;
+            padding: 0;
+        }
+
+        .logo-text li {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            text-align: justify;
+            line-height: 1.8em;
+            color: #444;
+        }
+
+        .logo-image {
+            flex: 1 1 40%;
+        }
+
+        .logo-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(79, 51, 13, 0.66);
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+       
+        .features {
+        background:#c4a88fba;
+        padding: 80px 30px;
+        text-align: center;
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        font-family: 'Roboto', sans-serif;
+        }
+
+        .features h2 {
+            font-size: 3.2em;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: #f4f1ee;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .features-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .feature {
+            flex: 1 1 30%;
+            max-width: 350px;
+            padding: 25px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .feature:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+
+        .feature h3 {
+            font-size: 1.8em;
+            color: #b96115;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .feature p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #333;
+            margin-top: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .feature {
+                flex: 1 1 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .feature {
+                flex: 1 1 100%;
+            }
+        }
+
+        
+        .about-image img {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .mission-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 50px;
+            background: linear-gradient(135deg, #f5f5f5, #fff);
+            border: 1px solid #dcdcdc;
+            box-shadow: 0px 10px 30px rgba(90, 63, 35, 0.801);
+            margin: 50px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .mission-content {
+            flex: 1;
+            padding-right: 50px;
+            text-align: left;
+            animation: fadeIn 1.5s ease;
+        }
+
+        .mission-content h2 {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .mission-content p {
+            font-size: 18px;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            word-spacing: 2px;
+        }
+
+        .discover-link {
+            font-size: 18px;
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .discover-link:hover {
+            background-color: #1e90ff;
+            color: #fff;
+            box-shadow: 0px 5px 15px rgba(30, 144, 255, 0.4);
+        }
+
+        .mission-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            animation: slideIn 1.5s ease;
+        
+        }
+
+        .mission-image img {
+            max-width: 60%;
+            height: auto;
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mission-image img:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        .open-button {
+        background-color: #555;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        opacity: 0.8;
+        position: fixed;
+        bottom: 23px;
+        right: 28px;
+        width: 280px;
+        }
+
+      
+        .chat-popup {
+        display: none;
+        position: fixed;
+        bottom: 0;
+        right: 15px;
+        border: 3px solid #f1f1f1;
+        z-index: 9;
+        }
+
+      
+        .form-container {
+        max-width: 300px;
+        padding: 10px;
+        background-color: white;
+        }
+
+        .form-container textarea {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        border: none;
+        background: #f1f1f1;
+        resize: none;
+        min-height: 200px;
+        }
+
+        .form-container textarea:focus {
+        background-color: #ddd;
+        outline: none;
+        }
+
+   
+        .form-container .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 16px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom:10px;
+        opacity: 0.8;
+        }
+
+     
+        .form-container .cancel {
+        background-color: red;
+        }
+
+   
+        .form-container .btn:hover, .open-button:hover {
+        opacity: 1;
+        }
+        
+ 
+    .slideshow-container {
+            position: relative;
+            background:#daa97f;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            max-width: 900px;
+            margin: 5px auto;
+        }
+
+        .mySlides {
+            display: none;
+            padding: 70px;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            color: #ffffff;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            margin-top: -25px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            border: none;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 24px;
+            user-select: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+
+        .next {
+            right: 20px;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .dot-container {
+            text-align: center;
+        
+        }
+
+        .dot {
+            
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 5px;
+            background-color: rgba(228, 184, 41, 0.8);
+            border-radius: 50%;
+            display: inline-block;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #ffffff;
+            transform: scale(1.3);
+        }
+
+        p {
+            font-style:normal;
+            font-size: 20px;
+        }
+
+        .customer {
+            color: #e6e8ff;
+            font-size: 18px;
+            margin-top: 10px;
+            display: block;
+        }
+        .feedback-section {
+        background-color: #f3e8d5b5; 
+        padding: 40px 20px; 
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+       }
+
+        .feedback-title { 
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: #b99660;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Roboto', sans-serif;
+
+     }
+     .bottom-right-gif {
+             position:static; 
+             bottom: 0; 
+             left: 0; 
+             width: 150px; 
+             height: auto;
+             margin: 10px;            
+        }  
+
+    </style>
+</head>
+<body>
+
+    
+    <section class="header">
+        <h1>About Us</h1>
+        <p>“Where Beans Become Dreams”</p>
+    </section>
+
+  
+    <section class="about-container">
+        <div class="about-row">
+            <div class="about-col about-text">
+                <h2>Welcome to Our Cafe Lumiere</h2>
+                <p>"Welcome to Café Lumiere, where the soothing scent of freshly made coffee blends with the soft glow of nice conversations. We are a heaven for coffee fanatics, food lovers, and dreamers alike, and we want to make every visit enjoyable."</p>
+                <p>Lumiere, which means 'light', reflects our desire to create welcoming environments in which people may interact, relax, and have fun. We began the business in 2024, and our first location is in Shah Alam, Section 7. We decided to operate this business because we want people to enjoy good coffee throughout their day.</p>
+                <p>The founder of Café Lumiere, CEO Adlina Binti Amran, pursued her studies in Business Management at the University of Birmingham.</p>
+                <p>With almost 39,000 cups sold, we want to express our deepest appreciation to our loyal consumers for making this possible. Your continuous passion and support motivate us to maintain our commitment to quality, ensuring Lumiere Coffee continues your first choice.</p>
+                <button>Explore More</button>
+            </div>
+            <div class="about-col about-image">
+               <a href="images cafe/cafe 2.jpg"> <img src="images cafe/cafe 2.jpg" alt="Cafe Image"></a>
+            </div>
+        </div>
+    </section>
+    <section class="logo-container">
+        <div class="logo-row">
+            <div class="logo-image">
+                <a href="images cafe/logo.jpg">
+                    <img src="images cafe/logo.jpg" alt="Logo Image">
+                </a>
+            </div>
+            <div class="logo-text">
+                <h2>About Logo</h2>
+                <ul>
+                    <li>The coffee cup in the center represents the cafe's heart: great coffee. The steam coming from the cup offers warmth and a sense of calm, encouraging customers to enjoy a soothing beverage.</li>
+                    <li>The brown colors express coffee's natural, organic nature, creating a sense of warmth and honesty.</li>
+                    <li>The leaf detail provides a natural element to the design, symbolizing that the cafe's offerings are fresh and high quality.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+   
+    <section class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="features-row">
+            <div class="feature">
+                <h3>☕Quality Drinks</h3>
+                <p>Our coffee is handmade to perfection, with beans obtained from the best farms.</p>
+            </div>
+            <div class="feature">
+                <h3>🌟Best Service</h3>
+                <p>Our cafe provides excellent service, a comfortable environment, and a kind, welcoming staff.</p>
+            </div>
+            <div class="feature">
+                <h3>💸Affordable Price</h3>
+                <p>Enjoy delicious coffee flavours at affordable costs.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission-section">
+        <div class="mission-content">
+            <h2>☕︎ OUR MISSION</h2>
+            <p>"To create a welcoming space where people can connect, relax, and enjoy thoughtfully crafted food and beverages made with the finest ingredients."</p>
+            <a href="#" class="discover-link">Discover more</a>
+        </div>
+        <div class="mission-image">
+            <img src="images cafe/cafe.webp" alt="Coffee Process">
+        </div>
+    </section>
+
+    <button class="open-button" onclick="openForm()">Chat</button>
+
+<div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Chat</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+
+<section class="feedback-section">
+<div class="feedback-title">✨ Feedback from our Customers ✨</div>
+<div class="slideshow-container">
+
+    <div class="mySlides">
+      <p>Every visit to Lumiere Coffee feels special. The environment, service, and, of course, coffee are exceptional!</p>
+      <p class="customer">- Humairah</p>
+    </div>
+    
+    <div class="mySlides">
+      <p>I come here to work, and my surroundings is ideal for productivity. Great Wi-Fi, and even better coffee!</p>
+      <p class="customer">- Arif </p>
+    </div>
+    
+    <div class="mySlides">
+      <p>Great coffee and reasonably priced food. Lumiere Coffee really cares about its consumers!</p>
+      <p class="customer">- Lee </p>
+    </div>
+    
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    
+    <div class="dot-container">
+      <span class="dot" onclick="currentSlide(1)"></span> 
+      <span class="dot" onclick="currentSlide(2)"></span> 
+      <span class="dot" onclick="currentSlide(3)"></span> 
+    </div>
+    </div>
+
+    </section>
+    
+    <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+    </script>   
+    <div>
+        <img src="images cafe/coffee gif.gif" alt="Cute animation" class="bottom-right-gif">
+    </div>
+
+</body>
+</html>
+
+
+
