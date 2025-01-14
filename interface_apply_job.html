@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Interface of Apply Job</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+   
+
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: "Amatic SC", sans-serif;
+      background-color: #ffdfa3d7;
+      color: #333;
+    }
+
+    h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  margin: 0;  /* Reduced margin */
+  animation: move 3s linear infinite;
+  color: #444;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+
+    @keyframes move {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(10px); }
+      100% { transform: translateX(0); }
+    }
+
+    h2 {
+      font-size: 2.2rem;
+      margin: 20px 0;
+      text-align: center;
+      color: #555;
+    }
+
+    .kotak {
+      background-color: #fff;
+      padding: 20px;
+      margin: 30px auto;
+      border: 2px solid #c9c9c9;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      text-align: center;
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    .kotak h3 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .container {
+      width: 220px;
+      height: 220px;
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.05);
+    }
+
+    .image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+
+    .container:hover .image {
+      opacity: 0.7;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(226, 139, 68, 0.8);
+      height: 50%;
+      width: 100%;
+      transition: height 0.3s ease;
+      border-radius: 10px;
+    }
+
+    .container:hover .overlay {
+      height: 100%;
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 1.2rem;
+      color: white;
+      text-align: center;
+    }
+
+    .gallery-section {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: flex-start;
+      margin-top: 30px;
+    }
+
+    .main-content {
+      flex: 1;
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .gallery-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery-item {
+      flex: 1 1 calc(33.33% - 15px);
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+    }
+
+    .gallery-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Styling for "Join Our Community" section */
+    .community-box {
+      background-color: #fffbf3;
+      padding: 15px;
+      margin-top: 30px;
+      border-radius: 10px;
+      border: 2px solid #f5b300;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .community-box h2 {
+      color: #f5b300;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .community-box p {
+      font-size: 1.1rem;
+      color: #666;
+    }
+
+    .apply-button {
+      display: inline-block;
+      background-color: #f5b300;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-top: 12px;
+      transition: background-color 0.3s ease;
+    }
+
+    .apply-button:hover {
+      background-color: #e4ba3c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menambah video latar belakang -->
+  <video id="background-video" autoplay muted loop>
+    <source src="path/to/your/video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <h1>LET'S BE ONE OF US!</h1>
+  <div class="kotak">
+    <p>Welcome to Cafe Lumier! Join our team and be part of an amazing experience.</p>
+  </div>
+
+  <!-- Kotak "Join Our Community" -->
+  <div class="community-box">
+    <h2>JOIN OUR COMMUNITY</h2>
+    <p>
+      We are more than just a workplace; we are a family! Join us and explore opportunities to grow, connect, and thrive in a supportive environment.
+    </p>
+    <a href="apply_job.html" class="apply-button">Apply Now</a>
+  </div>
+
+  <div class="w3-section w3-row-padding">
+    <div class="gallery-section">
+      <!-- Galeri -->
+      <div class="kotak">
+        <h3>Our Gallery</h3>
+        <div class="gallery-container">
+          <div class="gallery-item">
+            <img src="images/gallery 1.jpg" alt="Gallery Image 1" class="gallery-image">
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery 2.jpg" alt="Gallery Image 2" class="gallery-image">
+          </div>
+          <div class="gallery-item">
+            <img src="images/gallery 3.jpg" alt="Gallery Image 3" class="gallery-image">
+          </div>
+        </div>
+      </div>
+
+      <div class="kotak">
+        <h2>WHAT DO WE OFFER?</h2>
+        <div class="image-row">
+          <div class="container">
+            <a href="apply_job.html">
+              <img src="images/barista.jpg" alt="Barista" class="image">
+            </a>
+            <div class="overlay">
+              <div class="text">INTERESTED TO BE A BARISTA?<br>CLICK TO APPLY!</div>
+            </div>
+          </div>
+          <div class="container">
+            <img src="images/waiter.jpg" alt="Waiter/Waitress" class="image">
+            <div class="overlay">
+              <div class="text">INTERESTED TO BE A WAITER?<br>CLICK TO APPLY!</div>
+            </div>
+          </div>
+          <div class="container">
+            <img src="images/kitchen.jpg" alt="Kitchen Staff" class>
+            <div class="overlay">
+              <div class="text">INTERESTED TO BE A KITCHEN STAFF?<br>CLICK TO APPLY!</div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+</body>
+</html>
