@@ -1,0 +1,50 @@
+       body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('images/background17.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100vh;
+            color: white;
+        }
+
+        .menu {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px; 
+            height: 100%; 
+            background-color: rgba(0, 0, 0, 0.7); 
+            padding: 20px; 
+        }
+        .menu img {
+            width: 30px;
+            height: 30px; 
+            margin-right:10px; 
+            object-fit: contain; 
+            border-radius: 50%;
+        } 
+
+        .nav-bar {
+            display: flex; 
+            flex-direction: column; 
+        }
+
+        .nav-bar a {
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            transition: background-color 0.3s;
+        }
+
+        .nav-bar a:hover {
+            background-color: rgba(255, 255, 255, 0.2); 
+        }
+
+        .content {
+            margin-left: 220px; 
+            padding: 20px; 
+        }
