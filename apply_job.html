@@ -6,17 +6,16 @@
     <title>Cafe Job Application</title>
     <style>
         body, html {
-  height: 114%;
-  margin: 0;
-  font-family: "Amatic SC", sans-serif;
-  background-color: #be954dcc;
-  background-image: url('images/background6.jpg');
-  background-size: cover; 
-  background-position: center; 
-  background-repeat: no-repeat; 
-  color: #333;
-}
-
+            height: 100%;
+            margin: 0;
+            font-family: "Amatic SC", sans-serif;
+            background-color: #be954dcc;
+            background-image: url('images/background6.jpg');
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat; 
+            color: #333;
+        }
         .container {
             max-width: 600px;
             margin: 50px auto;
@@ -51,65 +50,77 @@
         button:hover {
             background-color: #45a049;
         }
-
         .center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 0; /* Optional: makes the container fill the full viewport height */
-}
-
-.center a {
-  text-decoration: none;
-  color: #333;
-  font-size: 18px; /* Optional: Adjust font size */
-}
-
-
+            text-align: center;
+            margin-top: 10px;
+        }
+        .center a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+        }
+        footer {
+            margin-top: 50px;
+            background-color: #212921;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        .map-container {
+            width: 50%;
+            height: 100px;
+            margin: 10px 0;
+        }
+        iframe {
+            border: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>Cafe Job Application</h1>
+        <form action="mailto:thirah.hamid04@gmail.com?subject= Hi,You May Drop Your Details and Resume" method="POST">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
 
-<div class="container">
-    <h1>Cafe Job Application</h1>
-    <form action="submit_application.php" method="POST" action="mailto:thirah.hamid04@gmail.com">
-        <!-- Personal Information -->
-        <label for="fullname">Full Name:</label>
-        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
 
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+            <label for="position">Position Applied:</label>
+            <select id="position" name="position" required>
+                <option value="" disabled selected>Select a position</option>
+                <option value="Barista">Barista</option>
+                <option value="Waiter/Waitress">Waiter/Waitress</option>
+                <option value="Kitchen Staff">Kitchen Staff</option>
+            </select>
 
-        <!-- Position Applied -->
-        <label for="position">Position Applied:</label>
-        <select id="position" name="position" required>
-            <option value="" disabled selected>Select a position</option>
-            <option value="Barista">Barista</option>
-            <option value="Waiter/Waitress">Waiter/Waitress</option>
-            <option value="Kitchen Staff">Kitchen Staff</option>
-        </select>
+            <h4>Work Experience:</h4>
+            <textarea id="experience" name="experience" rows="4" placeholder="Describe your work experience"></textarea>
 
-        <!-- Experience -->
-        <label for="experience">Work Experience:</label>
-        <textarea id="experience" name="experience" rows="4" placeholder="Describe your work experience"></textarea>
-
-        <!-- Submit Button -->
-        <h3><input id="submit" name="submit" type="submit" value="submit"></h3>&nbsp
+            <button type="submit">Submit</button> </form>
         
-    </form>
-<button onclick="document.location='interface_apply_job.html'">Back</button>
-<div class="center">
-    <a href="#top">Back to Top</a>
-  </div>
-    </div>
+        <div class="center">
+            <a href="#top">Back to Top</a>
+        </div>
     </div>
 
-
-<br>
-
+    <footer>
+        <h3>Find Us Here</h3>
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.7513210935673!2d-122.084249685096!3d37.42206597981925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb736b5f8a0b1%3A0x4f9e9e64d1c82e69!2sGoogleplex!5e0!3m2!1sen!2sus!4v1674851200000!5m2!1sen!2sus" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+        <p>&copy; 2025 Cafe Job Application</p>
+    </footer>
 </body>
 </html>
-
