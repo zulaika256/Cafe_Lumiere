@@ -10,33 +10,37 @@
             font-family: "Poppins", sans-serif;
             color: #333;
             display: flex;
-            height: 300;
-            justify-content: center;
-            align-items: center;
-           
+            flex-direction: column;
+            height: 200;
+            justify-content: center; /* Vertically centers content */
+            align-items: center; /* Horizontally centers content */
         }
+
         /* Video Background */
         .background-video {
             position: absolute;
-            top: 10;
+            top: 0;
             left: 0;
             width: 100%;
             height: 150%;
-            object-fit: cover; /* Menutupi seluruh skrin */
-            z-index: -1; /* Pastikan video berada di belakang elemen lain */
+            object-fit: cover;
+            z-index: -1;
         }
+
         .layout {
             display: flex;
             flex-wrap: wrap;
+            justify-content: center; /* Horizontally centers the layout */
             width: 90%;
             max-width: 1000px;
             gap: 30px;
-            min-height: 30;
+            margin-bottom: 3rem;
         }
+
         .left-section {
             flex: 1;
             max-width: 500px;
-            background:rgba(216, 195, 125, 0.623); /* Latarkan sedikit transparansi */
+            background: rgba(216, 195, 125, 0.623);
             padding: 40px;
             border-radius: 16px;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
@@ -44,6 +48,7 @@
             flex-direction: column;
             align-items: center;
         }
+
         .right-section {
             flex: 1;
             max-width: 400px;
@@ -51,8 +56,9 @@
             flex-direction: column;
             gap: 20px;
         }
+
         .box {
-            background: rgba(216, 195, 125, 0.623); /* Warna dengan transparansi */
+            background: rgba(216, 195, 125, 0.623);
             padding: 25px;
             border-radius: 16px;
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -61,6 +67,7 @@
             font-weight: bold;
             color: #fff;
         }
+
         h1 {
             font-size: 2.5em;
             color: #fcfcfc;
@@ -68,6 +75,7 @@
             text-align: center;
             font-weight: 700;
         }
+
         label {
             display: block;
             margin: 15px 0 10px;
@@ -76,6 +84,7 @@
             font-size: 1.1em;
             color: #ffffff;
         }
+
         input, textarea, select {
             width: 100%;
             padding: 14px;
@@ -86,11 +95,13 @@
             background: #fafafa;
             box-sizing: border-box;
         }
+
         input:focus, textarea:focus, select:focus {
             border-color: #888;
             outline: none;
             box-shadow: 0 0 8px rgba(136, 136, 136, 0.3);
         }
+
         button {
             width: 100%;
             background-color: #5C6BC0;
@@ -103,12 +114,15 @@
             cursor: pointer;
             transition: all 0.3s ease;
         }
+
         button:hover {
             background-color: #3F51B5;
         }
+
         .center {
             margin-top: 20px;
         }
+
         .center a {
             text-decoration: none;
             color: #333;
@@ -116,27 +130,79 @@
             font-weight: bold;
             transition: color 0.3s ease;
         }
+
         .center a:hover {
             color: #555;
         }
+
         .box ul {
             list-style: none;
             padding: 0;
         }
+
         .box ul li {
             font-size: 1.1em;
             color: #fff;
             margin-bottom: 10px;
         }
+
         iframe {
             width: 100%;
             border: none;
             border-radius: 16px;
             height: 200px;
         }
+
+        /* Footer Section */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #f1f1f1;
+            width: 100%;
+            font-size: 1rem;
+            border-top: 1px solid #ddd;
+            position: relative;
+            bottom: 0;
+        }
+        .info {
+            text-align: left;
+            margin-top: 3rem;
+        }
+
+        .info p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .info a {
+            color: #8c6d4b;
+            text-decoration: none;
+        }
+
+        .social-media {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .social-media a {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+        }
+
+        .social-media a img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+        }
+
+
     </style>
 </head>
 <body>
+
     <!-- Video Background -->
     <video class="background-video" autoplay muted loop>
         <source src="images/cafe1.mp4" type="video/mp4">
@@ -186,7 +252,69 @@
                 <h3>Our Location:</h3>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.5608581257593!2d101.24690957363588!3d3.34119945194484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31ccf35901f697c3%3A0xa7eb77775bef1a99!2sCaf%C3%A9%20Lumi%C3%A8re%20Kuala%20Selangor!5e1!3m2!1sen!2smy!4v1737798657730!5m2!1sen!2smy"></iframe>
             </div>
+
         </div>
     </div>
+
+    <br>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="info">
+            <h3>Lumière Cafe</h3>
+            <p>Level 13, 2 Iskandar Puteri </p>
+            <p>Johor Bahru 79100</p>
+            <p>Malaysia</p>
+            <p>📧 <a href="mailto:adlinaamran@gmail.com?">Send us e-mail</a></p>
+            <p>📞 <a href="tel:+61383766284">+61 (0) 3 8376 6284</a></p>
+        </div>
+        
+        <div class="center">
+            <p> Follow Us on Social Media for more information </p>
+        </div>
+
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank"><img src="images/icon fb.webp" alt="Facebook"></a>
+            <a href="https://www.instagram.com/sweet_batikluxe/" target="_blank"><img src="images/icon ig.webp" alt="Instagram"></a>
+            <a href="https://wa.link/0578p9" target="_blank"><img src="images/icon whatsapp.png" alt="Whatsapp"></a>
+        </div>
+    </div>
+<br>
+    <footer>
+        &copy; <span id="year"></span> Lumière Cafe. All rights reserved.
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form validation
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = this.name.value.trim();
+            const email = this.email.value.trim();
+            const subject = this.subject.value.trim();
+            const message = this.message.value.trim();
+
+            if (!name || !email || !subject || !message) {
+                alert('All fields are required!');
+                return;
+            }
+            alert('Thank you for contacting us!');
+            this.reset();
+        });
+
+        // Set the dynamic year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+    </footer>
+
 </body>
 </html>
