@@ -6,121 +6,187 @@
     <title>Cafe Job Application</title>
     <style>
         body, html {
-            height: 100%;
             margin: 0;
-            font-family: "Amatic SC", sans-serif;
-            background-color: #be954dcc;
-            background-image: url('images/background6.jpg');
-            background-size: cover; 
-            background-position: center; 
-            background-repeat: no-repeat; 
+            font-family: "Poppins", sans-serif;
             color: #333;
+            display: flex;
+            height: 300;
+            justify-content: center;
+            align-items: center;
+           
         }
-        .container {
-            max-width: 600px;
-            margin: 50px auto;
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Video Background */
+        .background-video {
+            position: absolute;
+            top: 10;
+            left: 0;
+            width: 100%;
+            height: 150%;
+            object-fit: cover; /* Menutupi seluruh skrin */
+            z-index: -1; /* Pastikan video berada di belakang elemen lain */
+        }
+        .layout {
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            max-width: 1000px;
+            gap: 30px;
+            min-height: 30;
+        }
+        .left-section {
+            flex: 1;
+            max-width: 500px;
+            background:rgba(216, 195, 125, 0.623); /* Latarkan sedikit transparansi */
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .right-section {
+            flex: 1;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .box {
+            background: rgba(216, 195, 125, 0.623); /* Warna dengan transparansi */
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #fff;
         }
         h1 {
+            font-size: 2.5em;
+            color: #fcfcfc;
+            margin-bottom: 20px;
             text-align: center;
-            color: #333;
+            font-weight: 700;
         }
         label {
             display: block;
-            margin: 10px 0 5px;
-            font-weight: bold;
+            margin: 15px 0 10px;
+            font-weight: 600;
+            text-align: left;
+            font-size: 1.1em;
+            color: #ffffff;
         }
-        input, textarea, select, button {
+        input, textarea, select {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            font-size: 1.1em;
+            background: #fafafa;
+            box-sizing: border-box;
+        }
+        input:focus, textarea:focus, select:focus {
+            border-color: #888;
+            outline: none;
+            box-shadow: 0 0 8px rgba(136, 136, 136, 0.3);
         }
         button {
-            background-color: #212921;
+            width: 100%;
+            background-color: #5C6BC0;
             color: white;
-            font-size: 16px;
+            font-size: 1.2em;
+            font-weight: bold;
             border: none;
+            border-radius: 8px;
+            padding: 14px;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #3F51B5;
         }
         .center {
-            text-align: center;
-            margin-top: 10px;
+            margin-top: 20px;
         }
         .center a {
             text-decoration: none;
             color: #333;
-            font-size: 16px;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: color 0.3s ease;
         }
-        footer {
-            margin-top: 50px;
-            background-color: #212921;
-            color: white;
-            text-align: center;
-            padding: 20px;
+        .center a:hover {
+            color: #555;
         }
-        .map-container {
-            width: 50%;
-            height: 100px;
-            margin: 10px 0;
+        .box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .box ul li {
+            font-size: 1.1em;
+            color: #fff;
+            margin-bottom: 10px;
         }
         iframe {
-            border: 0;
             width: 100%;
-            height: 100%;
-            border-radius: 8px;
+            border: none;
+            border-radius: 16px;
+            height: 200px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Cafe Job Application</h1>
-        <form action="mailto:thirah.hamid04@gmail.com?subject= Hi,You May Drop Your Details and Resume" method="POST">
-            <label for="fullname">Full Name:</label>
-            <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+    <!-- Video Background -->
+    <video class="background-video" autoplay muted loop>
+        <source src="images/cafe1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+    <div class="layout">
+        <div class="left-section">
+            <h1>Cafe Lumier Job Application</h1>
+            <form action="mailto:thirah.hamid04@gmail.com?subject=Job Application" method="POST" enctype="text/plain">
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-            <label for="position">Position Applied:</label>
-            <select id="position" name="position" required>
-                <option value="" disabled selected>Select a position</option>
-                <option value="Barista">Barista</option>
-                <option value="Waiter/Waitress">Waiter/Waitress</option>
-                <option value="Kitchen Staff">Kitchen Staff</option>
-            </select>
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
 
-            <h4>Work Experience:</h4>
-            <textarea id="experience" name="experience" rows="4" placeholder="Describe your work experience"></textarea>
+                <label for="position">Position Applied:</label>
+                <select id="position" name="position" required>
+                    <option value="" disabled selected>Select a position</option>
+                    <option value="Barista">Barista</option>
+                    <option value="Waiter/Waitress">Waiter/Waitress</option>
+                    <option value="Kitchen Staff">Kitchen Staff</option>
+                </select>
 
-            <button type="submit">Submit</button> </form>
-        
-        <div class="center">
-            <a href="#top">Back to Top</a>
+                <label for="experience">Work Experience:</label>
+                <textarea id="experience" name="experience" rows="5" placeholder="Describe your work experience"></textarea>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+
+        <div class="right-section">
+            <div class="box">
+                <h3>Details To Contact:</h3>
+                <ol>
+                    <li> Adlina (011 167 00793)</li>
+                    <li> Athirah (017 221 6209)</li>
+                    <li> Fatin (018 250 5922)</li>
+                    <li> Nurien (010 236 4020)</li>
+                    <li> Syameera (016 603 2608)</li>
+                </ol>
+            </div>
+            <div class="box">
+                <h3>Our Location:</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.5608581257593!2d101.24690957363588!3d3.34119945194484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31ccf35901f697c3%3A0xa7eb77775bef1a99!2sCaf%C3%A9%20Lumi%C3%A8re%20Kuala%20Selangor!5e1!3m2!1sen!2smy!4v1737798657730!5m2!1sen!2smy"></iframe>
+            </div>
         </div>
     </div>
-
-    <footer>
-        <h3>Find Us Here</h3>
-        <div class="map-container">
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.7513210935673!2d-122.084249685096!3d37.42206597981925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb736b5f8a0b1%3A0x4f9e9e64d1c82e69!2sGoogleplex!5e0!3m2!1sen!2sus!4v1674851200000!5m2!1sen!2sus" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
-        </div>
-        <p>&copy; 2025 Cafe Job Application</p>
-    </footer>
 </body>
 </html>
