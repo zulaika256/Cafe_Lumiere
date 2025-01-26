@@ -455,14 +455,39 @@
         </section>
     </div>
 
+    <br clear "all">
 
     <style>
-        /* Centering the table */
+        /* Centering the header and shifting it to the right */
+        .section-header {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #634024dd; /* Matching the color theme */
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'Georgia', serif; /* Elegant font */
+            padding-left: 15%; /* Shift the header to the right */
+        }
+
+        /* Styling the explanation paragraph and shifting it to the right */
+        .section-description {
+            text-align: center;
+            font-size: 18px;
+            color: #5e4632; /* Dark brown text */
+            margin-bottom: 30px;
+            font-style: italic;
+            font-family: 'Arial', sans-serif; /* Clean font */
+            padding-left: 15%; /* Shift the description to the right */
+        }
+        
+        /* Centering the table and shifting it to the right */
         .center-table {
             display: block;
-            margin-left: auto;
+            margin-left: 25%; /* Adjust the percentage to shift the table to the right */
             margin-right: auto;
-            width: 60%; /* Adjust width as needed */
+            width: 65%; /* Adjust width as needed */
             text-align: center;
         }
     
@@ -476,12 +501,13 @@
             background-color: #f7e8d1; /* Soft beige background */
             opacity: 0; /* Initially hidden for animation */
             animation: fadeIn 1s forwards; /* Fade-in effect */
+            table-layout: auto; /* Allow table columns to auto-adjust */
         }
     
         /* Aesthetic header styling */
         .side-dish-table th {
             padding: 15px;
-            background: #c29674dd; /* Soft brown background */
+            background: #634024dd; /* Soft brown background */
             color: white;
             font-weight: bold;
             font-size: 18px;
@@ -499,6 +525,24 @@
             transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
         }
     
+        /* Adjust the width of "Side Dish", "Description", and "Price" columns */
+        .side-dish-table th:first-child,
+        .side-dish-table td:first-child {
+            width: 30%; /* Adjusted width for the "Side Dish" column */
+        }
+    
+        .side-dish-table th:nth-child(2),
+        .side-dish-table td:nth-child(2) {
+            width: 40%; /* Adjusted width for the "Description" column */
+        }
+    
+        .side-dish-table th:last-child,
+        .side-dish-table td:last-child {
+            width: 20%; /* Adjusted width for the "Price" column */
+            text-align: center; /* Center the text in the "Price" column */
+            min-width: 60px; /* Minimum width for the "Price" column */
+        }
+    
         .side-dish-table tr:nth-child(even) {
             background-color: #fdf5e6; /* Very light beige for alternating rows */
         }
@@ -510,7 +554,7 @@
     
         /* Link styling for dish names */
         .side-dish-table a {
-            color: #a67b5b; /* Soft brown link color */
+            color: #8c6547; /* Soft brown link color */
             text-decoration: none;
             font-weight: bold;
             transition: color 0.3s ease, text-decoration 0.3s ease; /* Smooth transition for links */
@@ -531,6 +575,16 @@
             }
         }
     </style>
+
+    <!-- Header and description -->
+    <div class="section-header">
+        Sides for Every Taste
+    </div>
+    <div class="section-description">
+        Choose from our carefully selected sides, each designed to complement your meal and satisfy your cravings.
+         Whether you're <br>in the mood for something savory or light, we've got the perfect side for you!
+    </div>
+
     
     <!-- Side Dish Menu Table centered -->
     <div class="center-table">
@@ -567,6 +621,7 @@
         </table>
     </div>
     
+    
       <!-- Back to Top Button -->
       <div id="backToTop" style="position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); display: none; cursor: pointer; font-size: 28px; background-color: #aa6e43e5; color: #fff; padding: 15px 20px; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); transition: all 0.3s ease-in-out;">
          ↑
@@ -589,28 +644,28 @@
         };
     </script>
 
-<script>
-    // JavaScript
-window.onload = function() {
-  setTimeout(function() {
-    const popup = document.createElement('div');
-    popup.id = 'popupMessage';
-    popup.innerHTML = `
-      <div class="popup-content">
-        <h2>Payment Information</h2>
-        <p>We only accept payments by <strong>Cash on Delivery</strong> or <strong>Cash Only</strong>.</p>
-        <button id="closePopup">Close</button>
-      </div>
-    `;
-    document.body.appendChild(popup);
-    
-    document.getElementById('closePopup').onclick = function() {
-      popup.style.display = 'none';
+    <script>
+        // JavaScript
+    window.onload = function() {
+    setTimeout(function() {
+        const popup = document.createElement('div');
+        popup.id = 'popupMessage';
+        popup.innerHTML = `
+        <div class="popup-content">
+            <h2>Payment Information</h2>
+            <p>We only accept payments by <strong>Cash on Delivery</strong> or <strong>Cash Only</strong>.</p>
+            <button id="closePopup">Close</button>
+        </div>
+        `;
+        document.body.appendChild(popup);
+        
+        document.getElementById('closePopup').onclick = function() {
+        popup.style.display = 'none';
+        };
+    }, 500); // Delay the pop-up by 500ms after page load
     };
-  }, 500); // Delay the pop-up by 500ms after page load
-};
 
-</script>
+    </script>
   
     <footer>
         &copy; 2025 Lumiere Café | All Rights Reserved.
