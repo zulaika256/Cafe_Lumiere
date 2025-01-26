@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart & Checkout - Lumière Café</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('image menu/add to cart bgg.jpg') center/cover no-repeat;
+            color: #4e4a42;
+        }
+
+        /* Header */
+        header {
+            background-color: #c59e77;
+            color: #6a4e23;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 2.5em;
+            font-family: 'Georgia', serif;
+            letter-spacing: 1px;
+        }
+
+        /* Cart Section */
+        .cart-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.778); /* Semi-transparent white */
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .cart-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .cart-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 200px;
+            padding: 15px;
+            border-radius: 10px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .cart-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .cart-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .cart-item .name {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .cart-item .price {
+            color: #6a4e23;
+            font-size: 1.1em;
+        }
+
+        .cart-item .remove-btn {
+            background-color: #b08256;
+            color: white;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .cart-item .remove-btn:hover {
+            background-color: #d64f4b;
+        }
+
+        .total-price {
+            text-align: right;
+            font-size: 1.6em;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .checkout-btn,
+        .back-menu-btn {
+            background-color: #6a4e23;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.4em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+            flex: 1;
+            margin: 0 10px;
+        }
+
+        .checkout-btn:hover {
+            background-color: #8e6e3f;
+        }
+
+        .back-menu-btn:hover {
+            background-color: #8e6e3f;
+        }
+
+        /* Customer Details Form */
+        .customer-form {
+            margin-top: 60px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            display: none;
+        }
+
+        .customer-form h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .customer-form input,
+        .customer-form textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1em;
+        }
+
+        .customer-form button {
+            background-color: #6a4e23;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.3em;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .customer-form button:hover {
+            background-color: #8e6e3f;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6a4e23;
+            color: white;
+            font-size: 1em;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        Lumière Café - Cart & Checkout
+    </header>
+
+    <!-- Cart Section -->
+    <div class="cart-container" id="cart-container">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+        </div>
+
+        <div class="cart-items" id="cart-items">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+
+        <div class="total-price">
+            <p>Total: RM <span id="total-price">0.00</span></p>
+        </div>
+
+        <div class="button-container">
+            <button class="back-menu-btn" onclick="window.location.href='menu.html'">Back to Menu</button>
+            <button class="checkout-btn" onclick="showCustomerForm()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Customer Details Form -->
+    <div class="customer-form" id="customer-form">
+        <h2>Customer Details</h2>
+        <form onsubmit="handleCheckout(event)">
+            <input type="text" id="customer-name" placeholder="Full Name" required>
+            <input type="text" id="customer-phone" placeholder="Phone Number" required>
+            <input type="text" id="customer-address" placeholder="Delivery Address" required>
+            <textarea id="customer-note" placeholder="Any special instructions?" rows="4"></textarea>
+            <button type="submit">Place Order</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        &copy; 2025 Lumière Café | All Rights Reserved.
+    </footer>
+
+    <script>
+       // Show the modal when the page loads
+       window.onload = function() {
+            document.getElementById('order-modal').style.display = 'block';
+        };
+
+        // Handle order method selection
+        function selectOrderMethod(method) {
+            localStorage.setItem('order-method', method); // Save the order method in localStorage
+            document.getElementById('order-modal').style.display = 'none';
+            if (method === 'delivery') {
+                document.getElementById('cart-container').style.display = 'none'; // Hide cart initially for delivery
+                showCustomerForm();
+            } else {
+                loadCart();
+                document.getElementById('cart-container').style.display = 'block'; // Show cart for collect
+            }
+
+        }
+    
+                // Load cart items from localStorage
+        function loadCart() {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            let cartItemsContainer = document.getElementById('cart-items');
+            let totalPrice = 0;
+            cartItemsContainer.innerHTML = '';
+
+            cart.forEach(item => {
+                let cartItem = document.createElement('div');
+                cartItem.classList.add('cart-item');
+                cartItem.innerHTML = `
+                    <img src="${item.image}" alt="${item.name}">
+                    <div class="name">${item.name}</div>
+                    <div class="price">RM ${item.price.toFixed(2)}</div>
+                    <button class="remove-btn" onclick="removeFromCart('${item.name}')">Remove</button>
+                `;
+                cartItemsContainer.appendChild(cartItem);
+                totalPrice += item.price;
+            });
+
+            document.getElementById('total-price').innerText = totalPrice.toFixed(2);
+        }
+
+        // Remove item from cart
+        function removeFromCart(itemName) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart = cart.filter(item => item.name !== itemName);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            loadCart();
+        }
+
+        // Show customer details form
+        function showCustomerForm() {
+            document.querySelector('.cart-container').style.display = 'none';
+            document.getElementById('customer-form').style.display = 'block';
+        }
+
+        // Handle checkout form submission
+        function handleCheckout(event) {
+            event.preventDefault();
+
+            let customerName = document.getElementById('customer-name').value;
+            let customerPhone = document.getElementById('customer-phone').value;
+            let customerAddress = document.getElementById('customer-address').value;
+            let customerNote = document.getElementById('customer-note').value;
+
+            alert(`Order placed successfully!\n\nName: ${customerName}\nPhone: ${customerPhone}\nAddress: ${customerAddress}\nNote: ${customerNote}\nPayment: Cash on Delivery`);
+
+            // Clear cart
+            localStorage.removeItem('cart');
+            loadCart();
+            document.getElementById('customer-form').reset();
+            document.getElementById('customer-form').style.display = 'none';
+            document.querySelector('.cart-container').style.display = 'none';
+        }
+
+        // Initialize the page
+        loadCart();
+        document.getElementById('cart-container').style.display = 'block';
+        
+    </script>
+
+</body>
+</html>

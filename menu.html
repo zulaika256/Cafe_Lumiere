@@ -14,33 +14,6 @@
             color: #866e4f; /* Dark brown text color */
         }
 
-        /* Top Navigation */
-        .top-nav {
-            background-color: #6a4e23; /* Dark brown for the nav */
-            width: 100%;
-            padding: 20px 0;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-        }
-
-        .top-nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1em;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
-        }
-
-        .top-nav a:hover {
-            background-color: #caa772; /* Light brown on hover */
-        }
-
         /* Left Picture */
         .left-picture {
             position: fixed;
@@ -68,37 +41,9 @@
             text-transform: uppercase;
             font-family: 'Georgia', serif;
             letter-spacing: 2px;
-            margin-top: 80px; /* Space for top nav */
+            margin: 0; /* Remove any margin */
+            position: relative; /* Optional: Ensures proper stacking context */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Sidebar Navigation */
-        nav {
-            background-color: #6a4e23; /* Dark brown sidebar */
-            width: 220px;
-            position: fixed;
-            top: 80px; /* Avoid overlap with top navigation */
-            left: 0;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            padding-top: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 15px 0;
-            font-size: 1.2em;
-            padding: 12px 20px;
-            text-align: left;
-            transition: background-color 0.3s;
-            border-radius: 5px;
-        }
-
-        nav a:hover {
-            background-color: #8e6e3f; /* Light brown on hover */
         }
 
         /* Content Section */
@@ -140,6 +85,7 @@
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
         }
 
         .menu-item:hover {
@@ -173,6 +119,35 @@
             font-size: 1.2em;
         }
 
+        .add-to-cart-btn {
+            background-color: #6a4e23;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .add-to-cart-btn:hover {
+            background-color: #8e6e3f;
+        }
+
+        /* Best Seller Icon */
+        .best-seller {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff6f61;
+            color: white;
+            font-size: 0.8em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -191,16 +166,28 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* Cart Icon Styles */
+        .cart-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #775e38;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-size: 1.5em;
+            z-index: 999;
+        }
+
+        .cart-icon:hover {
+            background-color: #8e6e3f;
+        }
     </style>
 </head>
 <body>
-    <!-- Top Navigation -->
-    <div class="top-nav">
-        <a href="#">Home</a>
-        <a href="#">Menu</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
-    </div>
 
     <!-- Left Picture -->
     <div class="left-picture">
@@ -212,90 +199,121 @@
         Lumiere Café 
     </header>
 
-        <div class="container">
+
+    <div class="container">
         <!-- Main Courses Section -->
-        <section id="main-courses" >
+        <section id="main-courses">
             <h2>Main Courses</h2>
             <div class="menu-items">
                 <div class="menu-item">
                     <a href="image menu/Chicken Futtuccine Alfredo.png" target="_blank">
-                        <img src="image menu/Chicken Futtuccine Alfredo.png" alt="Nasi Lemak">
+                        <img src="image menu/Chicken Futtuccine Alfredo.png" alt="Chicken Futtuccine Alfredo">
                     </a>                    
                     <h3>Chicken Futtuccine Alfredo</h3>
                     <p>Topped with perfectly grilled chicken slices and garnished with fresh parsley for a touch of freshness.</p>
                     <p class="price">RM 16.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Chicken Futtuccine Alfredo', 16.00)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
                     <a href="image menu/Lobster_Mac & Cheese.png" target="_blank">
-                        <img src="image menu/Lobster_Mac & Cheese.png" alt="Nasi Lemak">
+                        <img src="image menu/Lobster_Mac & Cheese.png" alt="Lobster Mac & Cheese">
                     </a>                    
                     <h3>Lobster Mac & Cheese</h3>
                     <p>A rich and indulgent dish that combines creamy, cheesy macaroni with succulent lobster meat.</p>
                     <p class="price">RM 24.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Lobster Mac & Cheese', 24.00)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
                     <a href="image menu/Classic_Steak_with_Creamy_Mashed_Potatoes.png" target="_blank">
-                        <img src="image menu/Classic_Steak_with_Creamy_Mashed_Potatoes.png" alt="Nasi Lemak">
-                    </a>                    
+                        <img src="image menu/Classic_Steak_with_Creamy_Mashed_Potatoes.png" alt="Classic Steak with Creamy Mashed Potatoes">
+                    </a>  
+                    <div class="best-seller">Best Seller</div>            
                     <h3>Classic Steak with Creamy Mashed Potatoes</h3>
-                    <p>A timeless, comforting dish featuring a perfectly cooked steak paired with velvety, creamy mashed potatoes</p>
+                    <p>A timeless, comforting dish featuring a perfectly cooked steak paired with velvety, creamy mashed potatoes.</p>
                     <p class="price">RM 38.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Classic Steak with Creamy Mashed Potatoes', 38.00)">Add to Cart</button>
                 </div>
             </div>
         </section>
 
-        <!-- Desserts Section -->
-        <section id="desserts" >
-            <h2>Desserts</h2>
-            <div class="menu-items">
+            <!-- Desserts Section -->
+            <section id="desserts">
+                <h2>Desserts</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <a href="image menu/Roasted_Fig & Ricotta_Tart.png" target="_self">
+                            <img src="image menu/Roasted_Fig & Ricotta_Tart.png" alt="Roasted Fig & Ricotta Tart">
+                        </a>
+                        <h3>Roasted Fig & Ricotta Tart</h3>
+                        <p>A tart made with a flaky, buttery crust, filled with a creamy ricotta filling, and topped with sweet, caramelized roasted figs.</p>
+                        <p class="price">RM 13.00</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Roasted Fig & Ricotta Tart', 13.00)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <a href="image menu/Salted_Caramel_ & Pretzel_Ice_Cream.png" target="_self">
+                            <img src="image menu/Salted_Caramel_ & Pretzel_Ice_Cream.png" alt="Salted Caramel & Pretzel Ice Cream">
+                        </a>
+                        <div class="best-seller">Best Seller</div>
+                        <h3>Salted Caramel & Pretzel Ice Cream</h3>
+                        <p>A sweet and salty flavor combination with smooth salted caramel ice cream, complemented by crunchy, salty pretzels.</p>
+                        <p class="price">RM 18.00</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Salted Caramel & Pretzel Ice Cream', 18.00)">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <a href="image menu/Miso_Caramel_Bread_Pudding-.png" target="_self">
+                            <img src="image menu/Miso_Caramel_Bread_Pudding-.png" alt="Miso Caramel Bread Pudding">
+                        </a>
+                        <div class="best-seller">Best Seller</div>
+                        <h3>Miso Caramel Bread Pudding</h3>
+                        <p>A rich bread pudding drizzled with a savory-sweet miso caramel sauce, creating a balance of flavors that’s unexpected yet delicious.</p>
+                        <p class="price">RM 24.00</p>
+                        <button class="add-to-cart-btn" onclick="addToCart('Miso Caramel Bread Pudding', 24.00)">Add to Cart</button>
+                    </div>
                 <div class="menu-item">
-                    <img src="image menu/Roasted_Fig & Ricotta_Tart.png" alt="Cake">
-                    <h3>Roasted Fig & Ricotta Tart</h3>
-                    <p>A tart made with a flaky, buttery crust, filled with a creamy ricotta filling, and topped with sweet, caramelized roasted figs.</p>
-                    <p class="price">RM 13.00</p>
-                </div>
-                <div class="menu-item">
-                    <img src="image menu/Salted_Caramel_ & Pretzel_Ice_Cream.png" alt="Ice Cream">
-                    <h3> Salted Caramel & Pretzel Ice Cream</h3>
-                    <p>A sweet and salty flavor combination with smooth salted caramel ice cream, complemented by crunchy, salty pretzels.</p>
-                    <p class="price">RM 18.00</p>
-                </div>
-                <div class="menu-item">
-                    <img src="image menu/Miso_Caramel_Bread_Pudding-.png" alt="Ice Cream">
-                    <h3> Miso Caramel Bread Pudding</h3>
-                    <p>A rich bread pudding drizzled with a savory-sweet miso caramel sauce, creating a balance of flavors that’s unexpected yet delicious</p>
-                    <p class="price">RM 24.00</p>
-                </div>
-                <div class="menu-item">
-                    <img src="image menu/Strawberry_Mini_Pavlova_Nests.png" alt="Ice Cream">
+                    <a href="image menu/Strawberry_Mini_Pavlova_Nests.png" target="_self">
+                        <img src="image menu/Strawberry_Mini_Pavlova_Nests.png" alt="Strawberry Mini Pavlova Nests">
+                    </a>
                     <h3> Strawberry Mini Pavlova Nests</h3>
-                    <p>
-                        Delicate mini pavlova nests with a crisp shell and soft, marshmallow-like center, topped with fresh strawberries, whipped cream, and strawberry sauce.</p>
+                    <p>Delicate mini pavlova nests with a crisp shell and soft, marshmallow-like center, topped with fresh strawberries, whipped cream, and strawberry sauce.</p>
                     <p class="price">RM 12.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Strawberry Mini Pavlova Nests', 12.00)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
-                    <img src="image menu/Olive_Oil & Sea_Salt_Brownies.png" alt="Ice Cream">
+                    <a href="image menu/Olive_Oil & Sea_Salt_Brownies.png" target="_self">
+                        <img src="image menu/Olive_Oil & Sea_Salt_Brownies.png" alt="Olive Oil & Sea Salt Brownie">
+                    </a>
                     <h3> Olive Oil & Sea Salt Brownies</h3>
                     <p>A rich and fudgy brownie made with high-quality olive oil, topped with a sprinkle of flaky sea salt for a savory twist</p>
                     <p class="price">RM 10.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Olive Oil & Sea Salt Brownies', 10.00)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
-                    <img src="image menu/Ube_Halaya_Crepe_Cake.png" alt="Ice Cream">
+                    <a href="image menu/Ube_Halaya_Crepe_Cake.png" target="_self">
+                        <img src="image menu/Ube_Halaya_Crepe_Cake.png" alt="Ube Halaya Crepe Cake">
+                    </a>
+                    <div class="best-seller">Best Seller</div>
                     <h3> Ube Halaya Crepe Cake</h3>
-                    <p>AA multi-layered crepe cake made with vibrant purple ube halaya (sweet purple yam), creating a colorful and sweet dessert.</p>
+                    <p>A multi-layered crepe cake made with vibrant purple ube halaya (sweet purple yam), creating a colorful and sweet dessert.</p>
                     <p class="price">RM 16.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Ube Halaya Crepe Cake', 16.00)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
-                    <img src="image menu/Respberry_Pistachi_Roll_Cake.png" alt="Ice Cream">
+                    <a href="image menu/Respberry_Pistachi_Roll_Cake.png" target="_self">
+                        <img src="image menu/Respberry_Pistachi_Roll_Cake.png" alt="Respberry Pistachi Roll Cake">
+                    </a>
                     <h3> Respberry Pistachi Roll Cake</h3>
                     <p>A light and fluffy sponge cake rolled with pistachio cream and fresh raspberry filling, creating a delightful balance of nutty and tangy flavors.</p>
                     <p class="price">RM 25.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Respberry Pistachi Roll Cake', 25.00)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
-                    <img src="image menu/Black_Forest_Verrine-.png" alt="Ice Cream">
+                    <a href="image menu/Black_Forest_Verrine-.png" target="_self">
+                        <img src="image menu/Black_Forest_Verrine-.png" alt=" Black Forest Verrine">
+                    </a>
                     <h3> Black Forest Verrine</h3>
                     <p>A modern take on Black Forest cake, layered in a glass with chocolate mousse, cherry compote, whipped cream, and crumbled chocolate cake for a rich and elegant treat.</p>
                     <p class="price">RM 13.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Black Forest Verrine', 13.00)">Add to Cart</button>
                 </div>
             </div>
         </section>
@@ -305,29 +323,231 @@
             <h2>Drinks</h2>
             <div class="menu-items">
                 <div class="menu-item">
-                    <img src="image menu/Salted_Caramel_Affogato_Shake-.png">
-                    <h3>Salted Caramel Affogato Shake</h3>
-                    <p>A decadent shake combining espresso, salted caramel ice cream, and a drizzle of caramel sauce, topped with whipped cream.</p>
+                    <a href="image menu/ice latte.png" target="_self">
+                        <img src="image menu/ice latte.png" alt="Ice Latte">
+                    </a>
+                    <h3>Iced Latte</h3>
+                    <p>A refreshing blend of rich espresso and creamy milk, served over ice for a smooth and invigorating coffee experience.</p>
                     <p class="price">RM 8.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Iced Latte', 8.00)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
-                    <img src="image menu/Cucumber_Melon_Refresher-.png">
+                    <a href="image menu/Cucumber_Melon_Refresher-.png target="_self">
+                        <img src="image menu/Cucumber_Melon_Refresher-.png" alt="Cucumber Melon Refresher">
+                    </a>
                     <h3>Cucumber Melon Refresher</h3>
-                    <p>A light and hydrating drink with cucumber juice, honeydew melon, and a splash of lime, served chilled.</p>
-                    <p class="price">RM 7.00</p>
+                    <p>A light and revitalizing drink featuring the crisp taste of cucumber blended with the sweet, fruity essence of melon</p>
+                    <p class="price">RM 14.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Cucumber Melon Refresher', 14.00)">Add to Cart</button>
                 </div>
                 <div class="menu-item">
-                    <img src="image menu/Iced_Vannilaa_Chai_Latte-.png">
-                    <h3>Chocolate Chai Iced Latte</h3>
-                    <p>A spiced chocolate latte with chai spices, cocoa powder, and milk, served over ice for a unique flavor blend.</p>
-                    <p class="price">RM 12.00</p>
+                    <a href="image menu/strawberry matcha latte.png" target="_self">
+                        <img src="image menu/strawberry matcha latte.png" alt="Strawberry Matcha Latte">
+                    </a>
+                    <div class="best-seller">Best Seller</div>
+                    <h3>Strawberry Matcha Latte</h3>
+                    <p>A delightful fusion of earthy matcha and sweet strawberry puree, layered with creamy milk.</p>
+                    <p class="price">RM 11.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Strawberry Matcha Latte', 11.00)">Add to Cart</button>
                 </div>
+                <div class="menu-item">
+                    <a href="image menu/lavender milk tea.png" target="_self">
+                        <img src="image menu/lavender milk tea.png" alt="Lavender Milk Tea">
+                    </a>
+                    <div class="best-seller">Best Seller</div>
+                    <h3>Lavender Milk Tea</h3>
+                    <p> A soothing and aromatic beverage that combines the floral notes of lavender with creamy milk tea.</p>
+                    <p class="price">RM 16.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Lavender Milk Tea', 16.00)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <a href="image menu/Salted_Caramel_Affogato_Shake-.png target="_self">
+                        <img src="image menu/Salted_Caramel_Affogato_Shake-.png" alt="Salted Caramel Affogato Shake">
+                    </a>
+                    <h3>Salted Caramel Affogato Shake</h3>
+                    <p>A decadent treat that blends velvety salted caramel with creamy vanilla ice cream, topped with a shot of rich espresso</p>
+                    <p class="price">RM 19.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('alted Caramel Affogato Shake', 19.00)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <a href="image menu/mango iced tea.png" target="_self">
+                        <img src="image menu/mango iced tea.png" alt="Mango Iced Tea">
+                    </a>
+                    <div class="best-seller">Best Seller</div>
+                    <h3>Mango Iced Tea</h3>
+                    <p>a refreshing beverage made with a blend of chilled tea and sweet, tangy mango puree</p>
+                    <p class="price">RM 7.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Mango Iced Tea', 7.00)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <a href="image menu/avocado creamy and cheese smoothie.png" target="_self">
+                        <img src="image menu/avocado creamy and cheese smoothie.png" alt="Avocado Creamy & Cheese Smoothie">
+                    </a>
+                    <h3>Avocado Creamy & Cheese Smoothie</h3>
+                    <p>Creamy drink made with smooth avocado and a velvety texture, topped with a savory layer of cheese</p>
+                    <p class="price">RM 15.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Avocado Creamy & Cheese Smoothie', 15.00)">Add to Cart</button>
+                </div>
+                <div class="menu-item">
+                    <a href="image menu/Chocolate Peanut Butter Shake.png" target="_self">
+                        <img src="image menu/Chocolate Peanut Butter Shake.png" alt="Chocolate Peanut Butter Shake">
+                    </a>
+                    <div class="best-seller">Best Seller</div>
+                    <h3>Chocolate Peanut Butter Shake</h3>
+                    <p>Indulgent drink that combines the creamy, nutty flavor of peanut butter with the smooth, decadent taste of chocolate</p>
+                    <p class="price">RM 23.00</p>
+                    <button class="add-to-cart-btn" onclick="addToCart('Chocolate Peanut Butter Shake', 23.00)">Add to Cart</button>
+                </div>
+                
             </div>
         </section>
     </div>
 
+
+    <style>
+        /* Centering the table */
+        .center-table {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 60%; /* Adjust width as needed */
+            text-align: center;
+        }
+    
+        .side-dish-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px; /* Rounded corners for the table */
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for the table */
+            background-color: #f7e8d1; /* Soft beige background */
+        }
+    
+        /* Aesthetic header styling */
+        .side-dish-table th {
+            padding: 15px;
+            background: #c29674dd; /* Soft brown background */
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+        }
+    
+        .side-dish-table td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #d4c3a3e9; /* Light brown border */
+            font-size: 16px;
+            color: #5e4632; /* Dark brown text */
+        }
+    
+        .side-dish-table tr:nth-child(even) {
+            background-color: #fdf5e6; /* Very light beige for alternating rows */
+        }
+    
+        .side-dish-table tr:hover {
+            background-color: #f3e5d0; /* Slightly darker beige for hover */
+        }
+    
+        /* Link styling for dish names */
+        .side-dish-table a {
+            color: #a67b5b; /* Soft brown link color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+    
+        .side-dish-table a:hover {
+            text-decoration: underline;
+            color: #5e4632; /* Darker brown on hover */
+        }
+    </style>
+    
+    <!-- Side Dish Menu Table centered -->
+    <div class="center-table">
+        <table class="side-dish-table">
+            <thead>
+                <tr>
+                    <th>Side Dish</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="pdf menu/cornrib.pdf" target="_blank">Grilled Corn Rib</a></td>
+                    <td>Smoky, spiced, charred, with a rich dipping sauce.</td>
+                    <td>RM 15</td>
+                </tr>
+                <tr>
+                    <td><a href="pdf menu/garlicbread.pdf" target="_blank">Garlic Bread</a></td>
+                    <td>Soft, buttery, and loaded with savory garlic flavor.</td>
+                    <td>RM 10</td>
+                </tr>
+                <tr>
+                    <td><a href="coleslaw.pdf" target="_blank">Coleslaw</a></td>
+                    <td>Crispy cabbage with a creamy dressing</td>
+                    <td>$2.99</td>
+                </tr>
+                <tr>
+                    <td><a href="garlic_bread.pdf" target="_blank">Garlic Bread</a></td>
+                    <td>Toasted bread with a rich garlic butter spread</td>
+                    <td>$2.49</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+      <!-- Back to Top Button -->
+      <div id="backToTop" style="position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); display: none; cursor: pointer; font-size: 28px; background-color: #aa6e43e5; color: #fff; padding: 15px 20px; border-radius: 50%; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); transition: all 0.3s ease-in-out;">
+         ↑
+      </div>
+        
+    <script>
+        // Show the button when scrolling down
+        window.onscroll = function () {
+        const button = document.getElementById("backToTop");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+        };
+    
+        // Scroll to the top when the button is clicked
+        document.getElementById("backToTop").onclick = function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+    </script>
+  
     <footer>
         &copy; 2025 Lumiere Café | All Rights Reserved.
     </footer>
+
+    <!-- Cart Icon -->
+    <a href="add to chart menu.html">
+        <div class="cart-icon">
+            🛒
+        </div>
+    </a>
+
+    <script>
+    function addToCart(itemName, itemPrice) {
+        // Retrieve the cart from local storage or initialize an empty array
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Add the selected item to the cart
+        cart.push({ name: itemName, price: itemPrice });
+        
+        // Save the updated cart back to local storage
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+        // Redirect the user to the cart page
+        window.location.href = 'add to chart menu.html';
+    }
+    </script>
+
 </body>
 </html>
