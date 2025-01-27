@@ -7,7 +7,7 @@
     <style>
        
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Poppins',arial, sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f9f7f3;
@@ -81,6 +81,21 @@
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(79, 51, 13, 0.66);
         }
+                
+        .about-image img {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
         .logo-container {
             max-width: 1000px;
             margin: 60px auto;
@@ -135,6 +150,21 @@
         a {
             text-decoration: none;
         }
+                
+        .logo-image img {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
 
        
         .features {
@@ -204,184 +234,6 @@
             .feature {
                 flex: 1 1 100%;
             }
-        }
-
-        
-        .about-image img {
-            animation: fadeIn 1.5s ease-in-out;
-        }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-        .mission-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 50px;
-            background: linear-gradient(135deg, #f5f5f5, #fff);
-            border: 1px solid #dcdcdc;
-            box-shadow: 0px 10px 30px rgba(90, 63, 35, 0.801);
-            margin: 50px;
-            border-radius: 20px;
-            overflow: hidden;
-        }
-
-        .mission-content {
-            flex: 1;
-            padding-right: 50px;
-            text-align: left;
-            animation: fadeIn 1.5s ease;
-        }
-
-        .mission-content h2 {
-            font-size: 32px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .mission-content p {
-            font-size: 18px;
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 25px;
-            word-spacing: 2px;
-        }
-
-        .discover-link {
-            font-size: 18px;
-            color: #1e90ff;
-            text-decoration: none;
-            font-weight: bold;
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            border-radius: 5px;
-            box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-        }
-
-        .discover-link:hover {
-            background-color: #1e90ff;
-            color: #fff;
-            box-shadow: 0px 5px 15px rgba(30, 144, 255, 0.4);
-        }
-
-        .mission-image {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            animation: slideIn 1.5s ease;
-        
-        }
-
-        .mission-image img {
-            max-width: 60%;
-            height: auto;
-            border-radius: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .mission-image img:hover {
-            transform: scale(1.05);
-            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        .open-button {
-        background-color: #555;
-        color: white;
-        padding: 16px 20px;
-        border: none;
-        cursor: pointer;
-        opacity: 0.8;
-        position: fixed;
-        bottom: 23px;
-        right: 28px;
-        width: 280px;
-        }
-
-      
-        .chat-popup {
-        display: none;
-        position: fixed;
-        bottom: 0;
-        right: 15px;
-        border: 3px solid #f1f1f1;
-        z-index: 9;
-        }
-
-      
-        .form-container {
-        max-width: 300px;
-        padding: 10px;
-        background-color: white;
-        }
-
-        .form-container textarea {
-        width: 100%;
-        padding: 15px;
-        margin: 5px 0 22px 0;
-        border: none;
-        background: #f1f1f1;
-        resize: none;
-        min-height: 200px;
-        }
-
-        .form-container textarea:focus {
-        background-color: #ddd;
-        outline: none;
-        }
-
-   
-        .form-container .btn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 16px 20px;
-        border: none;
-        cursor: pointer;
-        width: 100%;
-        margin-bottom:10px;
-        opacity: 0.8;
-        }
-
-     
-        .form-container .cancel {
-        background-color: red;
-        }
-
-   
-        .form-container .btn:hover, .open-button:hover {
-        opacity: 1;
         }
         
  
@@ -503,7 +355,128 @@
              height: auto;
              margin: 10px;            
         }  
+    
+    
+    .team-section, .vision-section,.mission-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 50px;
+        background: linear-gradient(135deg, #fafafa, #f0f0f0);
+        border: 1px solid #e0e0e0;
+        box-shadow: 0px 10px 30px rgba(90, 63, 35, 0.15);
+        margin: 50px auto;
+        border-radius: 20px;
+        max-width: 1200px;
+    }
 
+    .team-content, .vision-content, .mission-content {
+        flex: 1;
+        padding-right: 30px;
+        animation: fadeIn 1.5s ease;
+    }
+
+    .team-content h2, .vision-content h2, .mission-content h2 {
+        font-size: 36px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+
+    .team-content p, .vision-content p, .mission-content p {
+        font-size: 18px;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        text-align: justify;
+        word-spacing: 2px;
+    }
+
+    .discover-link {
+        font-size: 18px;
+        color: #1e90ff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 10px 20px;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .discover-link:hover {
+        background-color: #1e90ff;
+        color: #fff;
+        box-shadow: 0px 5px 15px rgba(30, 144, 255, 0.4);
+    }
+
+    .team-image, .vision-image, .mission-image {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end; 
+        animation: slideIn 1.5s ease;
+    }
+
+    .team-image img, .vision-image img, .mission-image img {
+        max-width: 70%;
+        height: auto;
+        max-height: 350px;
+        border-radius: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        object-fit: cover;
+    }
+
+    .team-image img:hover, .vision-image img:hover, .mission-image img:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    footer {
+  text-align: center;
+  padding: 15px; 
+  background: #333;
+  color: #fff;
+  font-size: 0.8em;
+  line-height: 1.4; 
+}
+
+footer a {
+  color: #d14d6e;
+  text-decoration: none;
+  font-size: 0.85em;
+}
+
+.social-media img {
+  width: 20px; 
+  height: 20px;
+  margin: 0 8px; 
+  vertical-align: middle;
+}
+
+.info p {
+  margin: 5px 0; 
+  font-size: 0.85em; 
+}
+
+.center p {
+  margin: 10px 0;
+  font-size: 0.85em; 
+}
+
+    
     </style>
 </head>
 <body>
@@ -520,10 +493,12 @@
             <div class="about-col about-text">
                 <h2>Welcome to Our Cafe Lumiere</h2>
                 <p>"Welcome to Café Lumiere, where the soothing scent of freshly made coffee blends with the soft glow of nice conversations. We are a heaven for coffee fanatics, food lovers, and dreamers alike, and we want to make every visit enjoyable."</p>
-                <p>Lumiere, which means 'light', reflects our desire to create welcoming environments in which people may interact, relax, and have fun. We began the business in 2024, and our first location is in Shah Alam, Section 7. We decided to operate this business because we want people to enjoy good coffee throughout their day.</p>
+                <p>Lumiere, which means 'light', reflects our desire to create welcoming environments in which people may interact, relax, and have fun. We began the business in 2024, and our first location is in Kuala Selangor. We decided to operate this business because we want people to enjoy good coffee throughout their day.</p>
                 <p>The founder of Café Lumiere, CEO Adlina Binti Amran, pursued her studies in Business Management at the University of Birmingham.</p>
                 <p>With almost 39,000 cups sold, we want to express our deepest appreciation to our loyal consumers for making this possible. Your continuous passion and support motivate us to maintain our commitment to quality, ensuring Lumiere Coffee continues your first choice.</p>
-                <button>Explore More</button>
+                <a href="data.html" class="explore-more">
+                    <button>Explore More</button>
+                </a>
             </div>
             <div class="about-col about-image">
                <a href="images cafe/cafe 2.jpg"> <img src="images cafe/cafe 2.jpg" alt="Cafe Image"></a>
@@ -538,7 +513,7 @@
                 </a>
             </div>
             <div class="logo-text">
-                <h2>About Logo</h2>
+                <h2>🍪About Logo</h2>
                 <ul>
                     <li>The coffee cup in the center represents the cafe's heart: great coffee. The steam coming from the cup offers warmth and a sense of calm, encouraging customers to enjoy a soothing beverage.</li>
                     <li>The brown colors express coffee's natural, organic nature, creating a sense of warmth and honesty.</li>
@@ -571,46 +546,45 @@
         <div class="mission-content">
             <h2>☕︎ OUR MISSION</h2>
             <p>"To create a welcoming space where people can connect, relax, and enjoy thoughtfully crafted food and beverages made with the finest ingredients."</p>
-            <a href="#" class="discover-link">Discover more</a>
+          
         </div>
         <div class="mission-image">
-            <img src="images cafe/cafe.webp" alt="Coffee Process">
+            <img src="images cafe/cafe 3.webp" alt="Coffee Process">
         </div>
     </section>
 
-    <button class="open-button" onclick="openForm()">Chat</button>
+    <section class="vision-section">
+        <div class="vision-content">
+            <h2>☕︎ OUR vision</h2>
+            <p>"To be the number one choice for meaningful connections and unforgettable experiences, where every guest feels at home, surrounded by warmth, comfort, and the finest dessert and coffee delights."</p>
+        </div>
+        <div class="vision-image">
+            <img src="images cafe/coffee2.jpg" alt="Coffee Process">
+        </div>
+    </section>
 
-<div class="chat-popup" id="myForm">
-  <form action="/action_page.php" class="form-container">
-    <h1>Chat</h1>
+    <section class="team-section">
+        <div class="team-content">
+            <h2>☕︎ OUR TEAMS</h2>
+            <p>Our team is a group of dedicated professionals, each bringing unique skills and expertise to the table. Together, we are committed to delivering innovative solutions, fostering collaboration, and achieving excellence in every project we undertake. Our diverse backgrounds and perspectives enable us to approach challenges creatively and effectively, ensuring we meet and exceed expectations.</p>
+            <a href="teams.html" class="discover-link">Discover more</a>
+        </div>
+        <div class="vision-image">
+            <img src="images cafe/cafe team.webp" alt="Coffee Process">
+        </div>
+    </section>
 
-    <label for="msg"><b>Message</b></label>
-    <textarea placeholder="Type message.." name="msg" required></textarea>
-
-    <button type="submit" class="btn">Send</button>
-    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-  </form>
-</div>
-
-<script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
-</script>
 
 
 <section class="feedback-section">
 <div class="feedback-title">✨ Feedback from our Customers ✨</div>
 <div class="slideshow-container">
 
-    <div class="mySlides">
-      <p>Every visit to Lumiere Coffee feels special. The environment, service, and, of course, coffee are exceptional!</p>
-      <p class="customer">- Humairah</p>
-    </div>
+    <div class="mySlides"> 
+        <p>Every visit to Lumiere Coffee feels special. The environment, service, and, of course, coffee are exceptional!</p>
+        <p class="customer">- Humairah</p>
+      </div>
+      
     
     <div class="mySlides">
       <p>I come here to work, and my surroundings is ideal for productivity. Great Wi-Fi, and even better coffee!</p>
@@ -663,10 +637,68 @@ function closeForm() {
       slides[slideIndex-1].style.display = "block";  
       dots[slideIndex-1].className += " active";
     }
-    </script>   
+    </script>  
+    
     <div>
         <img src="images cafe/coffee gif.gif" alt="Cute animation" class="bottom-right-gif">
     </div>
+
+    <footer> 
+        <div class="info"> 
+            <h3>Lumière Cafe</h3> 
+            <p>50, Jalan Stesen,</p> 
+            <p>45000 Kuala Selangor, Selangor </p> 
+            <p>Malaysia</p> 
+            <p>📧 <a href="mailto:adlinaamran@gmail.com?">Send us e-mail</a></p> 
+            <p>📞 <a href="tel:+61383766284">+61 (0) 3 8376 6284</a></p> 
+        </div> 
+         
+        <div class="center"> 
+            <p> Follow Us on Social Media for more information </p> 
+        </div> 
+      
+        <div class="social-media"> 
+            <a href="https://facebook.com" target="_blank"><img src="images cafe/facebook.png" alt="Facebook"></a> 
+            <a href="https://www.instagram.com/sweet_batikluxe/" target="_blank"><img src="images cafe/instagram.jpg" alt="Instagram"></a> 
+            <a href="https://wa.link/0578p9" target="_blank"><img src="images cafe/icon whatsapp.png" alt="Whatsapp"></a> 
+        </div> 
+      </div> 
+      
+      <footer> 
+        &copy; <span id="year"></span> Lumière Cafe. All rights reserved.
+      </footer> 
+      
+      <script> 
+        // Smooth scrolling for navigation links 
+        document.querySelectorAll('nav a').forEach(anchor => { 
+            anchor.addEventListener('click', function(e) { 
+                e.preventDefault(); 
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ 
+                    behavior: 'smooth' 
+                }); 
+            }); 
+        }); 
+      
+        // Form validation 
+        document.getElementById('contactForm').addEventListener('submit', function(e) { 
+            e.preventDefault(); 
+            const name = this.name.value.trim(); 
+            const email = this.email.value.trim(); 
+            const subject = this.subject.value.trim(); 
+            const message = this.message.value.trim(); 
+      
+            if (!name || !email || !subject || !message) { 
+                alert('All fields are required!'); 
+                return; 
+            } 
+            alert('Thank you for contacting us!'); 
+            this.reset(); 
+        }); 
+      
+        // Set the dynamic year in the footer 
+        document.getElementById('year').textContent = new Date().getFullYear(); 
+      </script>
+      </footer>
 
 </body>
 </html>
