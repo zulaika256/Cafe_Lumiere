@@ -3,319 +3,473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cart & Checkout - Lumière Café</title>
+    <title>Your Cart</title>
     <style>
-        /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: url('image menu/add to cart bgg.jpg') center/cover no-repeat;
-            color: #4e4a42;
-        }
-
-        /* Header */
-        header {
-            background-color: #c59e77;
-            color: #6a4e23;
-            padding: 20px 0;
-            text-align: center;
-            font-size: 2.5em;
-            font-family: 'Georgia', serif;
-            letter-spacing: 1px;
-        }
-
-        /* Cart Section */
-        .cart-container {
-            max-width: 1200px;
-            margin: 40px auto;
+            background-color: #f1ede6;
+            color: #866e4f;
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.778); /* Semi-transparent white */
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-
-        .cart-header {
+        h1 {
             text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .cart-items {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-
-        .cart-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 200px;
-            padding: 15px;
-            border-radius: 10px;
-            background-color: #fff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .cart-item:hover {
-            transform: translateY(-10px);
-        }
-
-        .cart-item img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        .cart-item .name {
-            font-weight: bold;
-            font-size: 1.2em;
-            margin: 10px 0;
-        }
-
-        .cart-item .price {
             color: #6a4e23;
-            font-size: 1.1em;
         }
-
-        .cart-item .remove-btn {
-            background-color: #b08256;
+        .cart-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .cart-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .cart-item h3 {
+            color: #6a4e23;
+        }
+        .cart-item p {
+            font-size: 1em;
+            color: #6a4e23;
+        }
+        .cart-item .price {
+            font-weight: bold;
+            color: #8e6e3f;
+            margin-top: 10px;
+        }
+        .checkout-btn {
+            background-color: #6a4e23;
             color: white;
-            padding: 8px 12px;
+            padding: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
-
-        .cart-item .remove-btn:hover {
-            background-color: #d64f4b;
-        }
-
-        .total-price {
-            text-align: right;
-            font-size: 1.6em;
-            margin-top: 20px;
-            font-weight: bold;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: space-between;
+            font-size: 1em;
+            display: block;
+            width: 100%;
+            text-align: center;
             margin-top: 30px;
         }
-
-        .checkout-btn,
-        .back-menu-btn {
-            background-color: #6a4e23;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.4em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-align: center;
-            flex: 1;
-            margin: 0 10px;
-        }
-
         .checkout-btn:hover {
             background-color: #8e6e3f;
-        }
-
-        .back-menu-btn:hover {
-            background-color: #8e6e3f;
-        }
-
-        /* Customer Details Form */
-        .customer-form {
-            margin-top: 60px;
-            padding: 30px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            display: none;
-        }
-
-        .customer-form h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .customer-form input,
-        .customer-form textarea {
-            width: 100%;
-            padding: 12px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1.1em;
-        }
-
-        .customer-form button {
-            background-color: #6a4e23;
-            color: white;
-            padding: 12px 25px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1.3em;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .customer-form button:hover {
-            background-color: #8e6e3f;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #6a4e23;
-            color: white;
-            font-size: 1em;
-            margin-top: 40px;
-        }
-
-        footer a {
-            color: #ff6f61;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
 <body>
+    
+    <div class="cart-container">
+            <!-- Back to Menu Icon -->
+            <a href="menu.html" class="back-to-menu">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </a>
 
-    <!-- Header -->
-    <header>
-        Lumière Café - Cart & Checkout
-    </header>
+        <header class="cart-header">
+            <h1>Your Cart</h1>
+        </header>
+        <p class="cart-description">Review your items before checkout</p>
+    
+        <!-- Cart Items -->
+        <div id="cart-items"></div>
 
-    <!-- Cart Section -->
-    <div class="cart-container" id="cart-container">
-        <div class="cart-header">
-            <h2>Your Cart</h2>
+        <!-- Overall Total Price -->
+        <div class="overall-total">
+            <h3>Total: RM <span id="overall-total-amount">0.00</span></h3>
         </div>
 
-        <div class="cart-items" id="cart-items">
-            <!-- Cart items will be dynamically added here -->
-        </div>
-
-        <div class="total-price">
-            <p>Total: RM <span id="total-price">0.00</span></p>
-        </div>
-
-        <div class="button-container">
-            <button class="back-menu-btn" onclick="window.location.href='menu.html'">Back to Menu</button>
-            <button class="checkout-btn" onclick="showCustomerForm()">Proceed to Checkout</button>
-        </div>
+        <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
     </div>
-
-    <!-- Customer Details Form -->
-    <div class="customer-form" id="customer-form">
-        <h2>Customer Details</h2>
-        <form onsubmit="handleCheckout(event)">
-            <input type="text" id="customer-name" placeholder="Full Name" required>
-            <input type="text" id="customer-phone" placeholder="Phone Number" required>
-            <input type="text" id="customer-address" placeholder="Delivery Address" required>
-            <textarea id="customer-note" placeholder="Any special instructions?" rows="4"></textarea>
-            <button type="submit">Place Order</button>
+    
+    <!-- Checkout Form (hidden by default) -->
+    <div class="checkout-form-container" id="checkout-form-container">
+        <h2>Fill in Your Details</h2>
+        <form id="checkout-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+    
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+    
+            <label for="delivery-date">Delivery Date:</label>
+            <input type="date" id="delivery-date" name="delivery-date" required>
+    
+            <label for="delivery-time">Delivery Time:</label>
+            <input type="time" id="delivery-time" name="delivery-time" required>
+    
+            <button type="submit" class="submit-btn">Submit Order</button>
         </form>
     </div>
+    
+    <!-- Order Confirmation (hidden by default) -->
+    <div class="order-confirmation" id="order-confirmation">
+        <div class="video-background">
+            <video autoplay muted loop id="order-video">
+                <source src="video/thank you video.mp4" type="video/mp4"> <!-- Replace with your video file -->
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="content-container">
+            <h2>Thank you for your order!</h2>
+            <p>Your order is being prepared by our team. We will notify you once it's ready for delivery.</p>
+        </div>
+    </div>
 
-    <!-- Footer -->
-    <footer>
-        &copy; 2025 Lumière Café | All Rights Reserved.
-    </footer>
-
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
     <script>
-       // Show the modal when the page loads
-       window.onload = function() {
-            document.getElementById('order-modal').style.display = 'block';
-        };
+        // Fetch the cart from localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        const cartItemsContainer = document.getElementById('cart-items');
+        const overallTotalAmount = document.getElementById('overall-total-amount');
+        const checkoutFormContainer = document.getElementById('checkout-form-container');
+        const orderConfirmation = document.getElementById('order-confirmation');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        
+        function updateTotal() {
+            let total = 0;
+            cart.forEach(item => {
+                total += parseFloat(item.price); // Add the price of each item to the total
+            });
+            overallTotalAmount.textContent = total.toFixed(2); // Display total with 2 decimal places
+        }
 
-        // Handle order method selection
-        function selectOrderMethod(method) {
-            localStorage.setItem('order-method', method); // Save the order method in localStorage
-            document.getElementById('order-modal').style.display = 'none';
-            if (method === 'delivery') {
-                document.getElementById('cart-container').style.display = 'none'; // Hide cart initially for delivery
-                showCustomerForm();
-            } else {
-                loadCart();
-                document.getElementById('cart-container').style.display = 'block'; // Show cart for collect
-            }
-
+        
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+            overallTotalAmount.textContent = "0.00"; // Show total as 0 if the cart is empty
+        } else {
+            // Loop through cart and display items
+            cart.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                
+                itemElement.innerHTML = `
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>Price: RM ${item.price}</p>
+                        <button class="remove-btn" data-index="${index}">Remove</button>
+                    </div>
+                `;
+                
+                cartItemsContainer.appendChild(itemElement);
+            });
+            
+            // Add event listeners to remove buttons
+            const removeButtons = document.querySelectorAll('.remove-btn');
+            removeButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const index = e.target.getAttribute('data-index');
+                    cart.splice(index, 1);  // Remove the item from the cart array
+                    
+                    // Save the updated cart to localStorage
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    
+                    // Re-render the cart items
+                    location.reload();  // Reload the page to reflect changes
+                });
+            });
+    
+            // Update total whenever the cart changes
+            updateTotal();
         }
     
-                // Load cart items from localStorage
-        function loadCart() {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            let cartItemsContainer = document.getElementById('cart-items');
-            let totalPrice = 0;
-            cartItemsContainer.innerHTML = '';
-
-            cart.forEach(item => {
-                let cartItem = document.createElement('div');
-                cartItem.classList.add('cart-item');
-                cartItem.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}">
-                    <div class="name">${item.name}</div>
-                    <div class="price">RM ${item.price.toFixed(2)}</div>
-                    <button class="remove-btn" onclick="removeFromCart('${item.name}')">Remove</button>
-                `;
-                cartItemsContainer.appendChild(cartItem);
-                totalPrice += item.price;
-            });
-
-            document.getElementById('total-price').innerText = totalPrice.toFixed(2);
-        }
-
-        // Remove item from cart
-        function removeFromCart(itemName) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            cart = cart.filter(item => item.name !== itemName);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            loadCart();
-        }
-
-        // Show customer details form
-        function showCustomerForm() {
+        // Handle checkout button click
+        checkoutBtn.addEventListener('click', () => {
+            // Hide the cart view and show the checkout form
             document.querySelector('.cart-container').style.display = 'none';
-            document.getElementById('customer-form').style.display = 'block';
-        }
-
-        // Handle checkout form submission
-        function handleCheckout(event) {
-            event.preventDefault();
-
-            let customerName = document.getElementById('customer-name').value;
-            let customerPhone = document.getElementById('customer-phone').value;
-            let customerAddress = document.getElementById('customer-address').value;
-            let customerNote = document.getElementById('customer-note').value;
-
-            alert(`Order placed successfully!\n\nName: ${customerName}\nPhone: ${customerPhone}\nAddress: ${customerAddress}\nNote: ${customerNote}\nPayment: Cash on Delivery`);
-
-            // Clear cart
-            localStorage.removeItem('cart');
-            loadCart();
-            document.getElementById('customer-form').reset();
-            document.getElementById('customer-form').style.display = 'none';
-            document.querySelector('.cart-container').style.display = 'none';
-        }
-
-        // Initialize the page
-        loadCart();
-        document.getElementById('cart-container').style.display = 'block';
-        
+            checkoutFormContainer.style.display = 'block';
+        });
+    
+        // Handle form submission
+        document.getElementById('checkout-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+    
+            // Hide the form and show the confirmation message
+            checkoutFormContainer.style.display = 'none';
+            orderConfirmation.style.display = 'block';
+        });
     </script>
+    
+    
+    <style>
+        /* Background Image for Cart Section */
+        .cart-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px;
+            background-image: url('image menu/background\ your\ cart.jpg'); /* Replace with your image path */
+            background-size: cover; /* Ensures the image covers the entire container */
+            background-position: center; /* Centers the background image */
+            background-repeat: no-repeat; /* Prevents the image from repeating */
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 50px;
+            background-color: rgba(244, 241, 235, 0.7); /* Light brownish transparent background */
+        }
+
+        /* Back to Menu Icon */
+        .back-to-menu {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 18px;
+            color: #6a4e23; /* Dark brown */
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+        }
+
+        .back-to-menu i {
+            margin-right: 10px; /* Space between icon and text */
+        }
+
+        .back-to-menu:hover {
+            color: #8e6e3f; /* Darker brown when hovered */
+        }
+
+
+        /* Cart Header */
+        .cart-header {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    
+        .cart-header h1 {
+            font-size: 36px;
+            color: #4a3c31; /* Dark brown */
+            margin: 0;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+        }
+    
+        .cart-description {
+            text-align: center;
+            font-size: 18px;
+            color: #4a4135; /* Light brown */
+            font-family: 'Arial', sans-serif;
+        }
+    
+        /* Cart Items Container */
+        #cart-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        /* Overall Total Container */
+        .overall-total {
+            position: relative;
+            font-size: 16px;
+            font-weight: bold;
+            color: #e2d5c1; /* Dark brown */
+            background-color: rgba(136, 100, 50, 0.853); /* Light transparent background */
+            padding: 10px 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: auto;
+            max-width: 200px; /* Make the total container smaller */
+            text-align: center;
+            margin-bottom: 20px; /* Space between the total and the button */
+            margin-top: 20px; /* Add some top margin for spacing */
+            margin-left: 80%;
+            
+        }
+    
+        /* Individual Cart Item */
+        .cart-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px;
+            width: 250px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease-in-out;
+            background-color: #f7f1e1; /* Light tan */
+        }
+    
+        .cart-item:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+    
+        .cart-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+    
+        .cart-item div {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+    
+        .cart-item h3 {
+            font-size: 16px;
+            margin: 0;
+            font-weight: bold;
+            color: #4a3c31; /* Dark brown */
+        }
+    
+        .cart-item p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #7f6e56; /* Light brown */
+        }
+    
+        /* Remove Button */
+        .remove-btn {
+            margin-top: 10px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .remove-btn:hover {
+            background-color: #c0392b;
+        }
+    
+        /* Checkout Button */
+        .checkout-btn {
+            background-color: #b08e67; /* Brownish yellow */
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 30px auto;
+            display: block;
+        }
+    
+        .checkout-btn:hover {
+            background-color: #a57c52; /* Darker brown */
+        }
+    
+        /* Checkout Form Container */
+        .checkout-form-container {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 50px auto; /* Added margin to create space at the top and bottom */
+            background-color: #f1e6d6; /* Light tan background */
+        }
+    
+        .checkout-form-container h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #4a3c31;
+        }
+    
+        .checkout-form-container label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #7f6e56;
+        }
+    
+        .checkout-form-container input,
+        .checkout-form-container textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+    
+        .submit-btn {
+            background-color: #c39b6d;
+            color: white;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+    
+        .submit-btn:hover {
+            background-color: #a57c52;
+        }
+    
+        /* Order Confirmation */
+        .order-confirmation {
+            display: none;
+            text-align: center;
+            font-size: 18px;
+            color: #fff; /* Text color for better contrast */
+            position: relative;
+            z-index: 1; /* Ensure text is above the video */
+            height: 100vh; /* Full page height */
+        }
+    
+        /* Video Background */
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Place the video behind the content */
+        }
+    
+        #order-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the video covers the entire container */
+            opacity: 0.7; /* Make the video slightly transparent */
+        }
+    
+        /* Content Container */
+        .content-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0.8); /* Transparent white background */
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            z-index: 1;
+        }
+    
+        .content-container h2 {
+            font-size: 36px;
+            color: #4a3c31; /* Dark brown */
+            margin-bottom: 15px;
+        }
+    
+        .content-container p {
+            font-size: 18px;
+            color: #4a3c31; /* Dark brown */
+        }
+    </style>
+    
 
 </body>
 </html>
