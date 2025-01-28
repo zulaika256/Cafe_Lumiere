@@ -71,7 +71,14 @@
         h1 {
             font-size: 2.5em;
             font-family: 'Times New Roman', Times, serif;
-            color: #fcfcfc;
+            color: #3a170a;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 2.5em;
+            color: #fffcfa;
             margin-bottom: 20px;
             text-align: center;
             font-weight: 700;
@@ -202,7 +209,7 @@
     </style>
 </head>
 <body>
-    <h1>APPLY JOB!</h1>
+    <h1>LETS BE PART OF OUR TEAM!</h1>
     <!-- Language Selector -->
     <select id="language-selector" onchange="translateLanguage()">
         <option value="en">English</option>
@@ -217,7 +224,7 @@
 
     <div class="layout">
         <div class="left-section">
-            <h1 id="job-application-title">Cafe Lumier Job Application</h1>
+            <h2 id="job-application-title">Cafe Lumier Job Application</h2>
             <form action="mailto:thirah.hamid04@gmail.com?subject=Hi Lumière Lovelies ,you may send your resume here." method="POST" enctype="text/plain">
                 <label for="fullname" id="fullname-label">Full Name:</label>
                 <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
@@ -245,14 +252,15 @@
 
         <div class="right-section">
             <div class="box">
-                <h3 id="details-to-contact">Details To Contact:</h3>
-                <ul>
-                    <li>➤ Adlina (011 167 00793)</li>
-                    <li>➤ Athirah (017 221 6209)</li>
-                    <li>➤ Fatin (018 250 5922)</li>
-                    <li>➤ Nurien (010 236 4020)</li>
-                    <li>➤ Syameera (016 603 2608)</li>
-                </ul>
+                <h3 id="details-to-contact">Details To Contact 📞:</h3>
+                <ol type="i">
+                    <li>Adlina (011 167 00793)</li>
+                    <li>Athirah (017 221 6209)</li>
+                    <li>Fatin (018 250 5922)</li>
+                    <li>Nurien (010 236 4020)</li>
+                    <li>Syameera (016 603 2608)</li>
+                </ol>
+                
             </div>
             <div class="box">
                 <h3 id="our-location">Our Location:</h3>
@@ -313,7 +321,7 @@
                 "fullname": "Nama Penuh:",
                 "email": "Emel:",
                 "phone": "Nombor Telefon:",
-                "position": "Jawatan Dipohon:",
+                "position": "Jawatan yang dipohon:",
                 "work-experience": "Pengalaman Kerja:",
                 "submit-btn": "Hantar Permohonan",
                 "details-to-contact": "Maklumat Untuk Dihubungi:",
