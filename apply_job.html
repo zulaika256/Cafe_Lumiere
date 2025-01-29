@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Job Application</title>
+    <link rel="stylesheet" href="applyjob.css">
+</head>
+<body>
+
+    <h1>LETS BE PART OF OUR TEAM!</h1>
+
+    <select id="language-selector" onchange="translateLanguage()">
+        <option value="en">English</option>
+        <option value="ms">Malay</option>
+    </select>
+
+    <video class="background-video" autoplay muted loop>
+        <source src="images/cafe1.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="layout">
+        <div class="left-section">
+            <h2 id="job-application-title">Cafe Lumière Job Application</h2>
+            <form action="mailto:thirah.hamid04@gmail.com?subject=Hi Lumière Lovelies ,you may send your resume here." method="POST" enctype="text/plain">
+                <label for="fullname" id="fullname-label">Full Name:</label>
+                <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required>
+
+                <label for="email" id="email-label">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="phone" id="phone-label">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <label for="position" id="position-label">Position Applied:</label>
+                <select id="position" name="position" required>
+                    <option value="" disabled selected>Select a position</option>
+                    <option value="Barista">Barista</option>
+                    <option value="Waiter/Waitress">Waiter/Waitress</option>
+                    <option value="Kitchen Staff">Kitchen Staff</option>
+                </select>
+
+                <label for="experience" id="experience-label">Work Experience:</label>
+                <textarea id="experience" name="experience" rows="5" placeholder="Describe your work experience"></textarea>
+
+                <button type="submit" id="submit-btn">Submit Application</button>
+            </form>
+        </div>
+
+        <div class="right-section">
+            <div class="box">
+                <h3 id="details-to-contact">Details To Contact 📞:</h3>
+                <ol type="i">
+                    <li>Adlina (011 167 00793)</li>
+                    <li>Athirah (017 221 6209)</li>
+                    <li>Fatin (018 250 5922)</li>
+                    <li>Nurien (010 236 4020)</li>
+                    <li>Syameera (016 603 2608)</li>
+                </ol>
+                
+            </div>
+            <div class="box">
+                <h3 id="our-location">Our Location:</h3>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3106.5608581257593!2d101.24690957363588!3d3.34119945194484!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31ccf35901f697c3%3A0xa7eb77775bef1a99!2sCaf%C3%A9%20Lumi%C3%A8re%20Kuala%20Selangor!5e1!3m2!1sen!2smy!4v1737798657730!5m2!1sen!2smy"></iframe>
+            </div>
+
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <footer>
+        <div class="info">
+        <h3>Cafe Lumière</h3>
+        <p>50, Jalan Stesen,</p>
+        <p>45000 Kuala Selangor, Selangor </p>
+        <p>Malaysia</p>
+            <p>📧 <a href="mailto:adlinaamran@gmail.com?" id="footer-contact">Send us e-mail</a></p>
+            <p>📞 <a href="tel:+61383766284" id="footer-phone">+61 (0) 3 8376 6284</a></p>
+        </div>
+        
+        <div class="center">
+            <p id="footer-follow">Follow Us on Social Media for more information</p>
+        </div>
+
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank"><img src="images/icon fb.webp" alt="Facebook"></a>
+            <a href="https://www.instagram.com/sweet_batikluxe/" target="_blank"><img src="images/icon ig.webp" alt="Instagram"></a>
+            <a href="https://wa.link/0578p9" target="_blank"><img src="images/icon whatsapp.png" alt="Whatsapp"></a>
+        </div>
+    </footer>
+
+    <script>
+
+        function translateLanguage() {
+            const lang = document.getElementById("language-selector").value;
+
+            const en = {
+                "job-application": "Cafe Lumier Job Application",
+                "fullname": "Full Name:",
+                "email": "Email:",
+                "phone": "Phone Number:",
+                "position": "Position Applied:",
+                "work-experience": "Work Experience:",
+                "submit-btn": "Submit Application",
+                "details-to-contact": "Details To Contact:",
+                "our-location": "Our Location:",
+                "footer-contact": "Send us e-mail",
+                "footer-phone": "+61 (0) 3 8376 6284",
+                "footer-follow": "Follow Us on Social Media for more information"
+            };
+
+            const ms = {
+                "job-application": "Permohonan Pekerjaan Cafe Lumier",
+                "fullname": "Nama Penuh:",
+                "email": "Emel:",
+                "phone": "Nombor Telefon:",
+                "position": "Jawatan yang dipohon:",
+                "work-experience": "Pengalaman Kerja:",
+                "submit-btn": "Hantar Permohonan",
+                "details-to-contact": "Maklumat Untuk Dihubungi:",
+                "our-location": "Lokasi Kami:",
+                "footer-contact": "Hantar emel kepada kami",
+                "footer-phone": "+61 (0) 3 8376 6284",
+                "footer-follow": "Ikuti Kami di Media Sosial untuk maklumat lanjut"
+            };
+
+            const translation = lang === 'ms' ? ms : en;
+
+            document.getElementById("job-application-title").textContent = translation["job-application"];
+            document.getElementById("fullname-label").textContent = translation["fullname"];
+            document.getElementById("email-label").textContent = translation["email"];
+            document.getElementById("phone-label").textContent = translation["phone"];
+            document.getElementById("position-label").textContent = translation["position"];
+            document.getElementById("experience-label").textContent = translation["work-experience"];
+            document.getElementById("submit-btn").textContent = translation["submit-btn"];
+            document.getElementById("details-to-contact").textContent = translation["details-to-contact"];
+            document.getElementById("our-location").textContent = translation["our-location"];
+            document.getElementById("footer-contact").textContent = translation["footer-contact"];
+            document.getElementById("footer-phone").textContent = translation["footer-phone"];
+            document.getElementById("footer-follow").textContent = translation["footer-follow"];
+        }
+
+    </script>
+
+</body>
+</html>

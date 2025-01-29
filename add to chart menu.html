@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+    <link rel="stylesheet" href="chart.css">
+</head>
+<body>
+    
+    <div class="cart-container">
+            <a href="menu.html" class="back-to-menu" style="color: rgba(70, 41, 3, 0.664);">
+                <i class="fas fa-arrow-left"></i> Back to Menu
+            </a>
+
+        <header class="cart-header">
+            <h1>Your Cart</h1>
+        </header>
+        <p class="cart-description" style="font-family: 'Times New Roman', Times, serif; color: rgba(212, 211, 209, 0.973);">Review your items before checkout</p>
+    
+        <div id="cart-items"></div>
+
+        <div class="overall-total">
+            <h3 style="color: rgb(17, 17, 17);">Total: RM <span id="overall-total-amount">0.00</span></h3>
+        </div>
+
+        <button class="checkout-btn" id="checkout-btn" style="font-family: 'Times New Roman', Times, serif;">Proceed to Checkout</button>
+    </div>
+
+    <div class="checkout-form-container" id="checkout-form-container">
+        <h2 style="color: white;">Fill in Your Details</h2>
+        <form id="checkout-form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+    
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" required></textarea>
+    
+            <label for="delivery-date">Delivery Date:</label>
+            <input type="date" id="delivery-date" name="delivery-date" required>
+    
+            <label for="delivery-time">Delivery Time:</label>
+            <input type="time" id="delivery-time" name="delivery-time" required>
+    
+            <button type="submit" class="submit-btn">Submit Order</button>
+        </form>
+    </div>
+    
+    <div class="order-confirmation" id="order-confirmation">
+        <div class="video-background">
+            <video autoplay muted loop id="order-video">
+                <source src="video/thank you video (1).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="content-container">
+            <h2 style="font-family: 'Times New Roman', Times, serif;">Thank you for your order!</h2>
+            <p>Your order is being prepared by our team. We will notify you once it's ready for delivery.</p>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
+    <script>
+
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        const cartItemsContainer = document.getElementById('cart-items');
+        const overallTotalAmount = document.getElementById('overall-total-amount');
+        const checkoutFormContainer = document.getElementById('checkout-form-container');
+        const orderConfirmation = document.getElementById('order-confirmation');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        
+        function updateTotal() {
+            let total = 0;
+            cart.forEach(item => {
+                total += parseFloat(item.price); 
+            });
+            overallTotalAmount.textContent = total.toFixed(2); 
+        }
+
+        
+        if (cart.length === 0) {
+            cartItemsContainer.innerHTML = "<p>Your cart is empty.</p>";
+            overallTotalAmount.textContent = "0.00"; 
+        } else {
+    
+            cart.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('cart-item');
+                
+                itemElement.innerHTML = `
+                    <div>
+                        <h3>${item.name}</h3>
+                        <p>Price: RM ${item.price}</p>
+                        <button class="remove-btn" data-index="${index}">Remove</button>
+                    </div>
+                `;
+                
+                cartItemsContainer.appendChild(itemElement);
+            });
+            
+            const removeButtons = document.querySelectorAll('.remove-btn');
+            removeButtons.forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const index = e.target.getAttribute('data-index');
+                    cart.splice(index, 1);  
+                    
+                    localStorage.setItem('cart', JSON.stringify(cart));
+                    
+                    location.reload();  
+                });
+            });
+    
+            updateTotal();
+        }
+    
+        checkoutBtn.addEventListener('click', () => {
+            document.querySelector('.cart-container').style.display = 'none';
+            checkoutFormContainer.style.display = 'block';
+        });
+    
+        document.getElementById('checkout-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            checkoutFormContainer.style.display = 'none';
+            orderConfirmation.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

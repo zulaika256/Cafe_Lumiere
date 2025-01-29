@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #f5ebe1;
+}
+.header {
+    text-align: center;
+    padding: 60px 20px;
+    background-image: url(images/background6.jpg);
+    color: #fff;
+}
+.header h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.header p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3em;
+    margin-top: 10px;
+    font-style: italic;
+    color: #e1cebdc7;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+}
+.team-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+.team-card:hover {
+    transform: translateY(-5px);
+}
+.team-card img {
+    width: 70%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+.team-card .role {
+    font-size: 1em;
+    color: #398a8a;
+    margin: 10px 0;
+}
+.team-card .name {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+.team-card p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 0.9em;
+    color: #6a5536;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+@media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .team-grid {
+      grid-template-columns: 1fr; 
+    }
+}
+footer {
+    text-align: center;
+    padding: 15px; 
+    background-color: #130901;
+    color: #fff;
+    font-size: 0.8em; 
+    line-height: 1.4; 
+}
+footer a {
+    color: #d14d6e;
+    text-decoration: none;
+    font-size: 0.85em; 
+}
+.social-media img {
+    width: 20px; 
+    height: 20px;
+    margin: 0 8px; 
+    vertical-align: middle;
+}
+.info p {
+  margin: 5px 0; 
+  font-size: 0.85em; 
+}
+.center p {
+  margin: 10px 0; 
+  font-size: 0.85em; 
+}
+h3{
+    font-family: 'Times New Roman', Times, serif;
+}

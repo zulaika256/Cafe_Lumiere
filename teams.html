@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Teams</title>
+  <link rel="stylesheet" href="teams.css">
+</head>
+<body>
+      <section class="header">
+        <h1>About Our Teams</h1>
+        <p>“Where Beans Become Dreams”</p>
+      </section>
+
+  <section class="team-section">
+    <div class="container">
+      <div class="team-grid">
+        <div class="team-card">
+
+          <a href="images/Adlina.jpg" target="_blank">
+            <img src="images/Adlina.jpg" alt="ceo cafe lumiere"></a>
+          <h3 class="role">CEO Cafe Lumiere</h3>
+          <h4 class="name">Adlina Binti Amran</h4>
+          <p>Our visionary leader, ensuring Lumiere Cafe stays ahead of the curve. The CEO oversees all aspects of the business, driving innovation and excellence to deliver the best experience for our customers.</p>
+        </div>
+        <div class="team-card">
+          <a href="images/Athirah.jpg" target="_blank">
+            <img src="images/Athirah.jpg" alt="HR Manager"></a>
+          <h3 class="role">Human Resource Manager</h3>
+          <h4 class="name">Athirah Binti Abd Hamid</h4>
+          <p>Dedicated to building a supportive and thriving work environment, our HR Manager ensures our team members have the resources, guidance, and motivation to succeed together</p>
+        </div>
+        <div class="team-card">
+          <a href="images/Nurien2.jpg" target="_blank">
+            <img src="images/Nurien2.jpg" alt="Marketing Manager"></a>
+          <h3 class="role">Marketing Manager</h3>
+          <h4 class="name">Nurien Irdina Binti Indra </h4>
+          <p>Driving creativity and innovation, our Marketing Manager develops impactful marketing strategies that ensure Lumiere Cafe’s brand remains memorable and engaging.</p>
+        </div>      
+        <div class="team-card">
+          <a href="images/Syameera.jpg" target="_blank">
+            <img src="images/Syameera.jpg" alt="Finance Manager"></a>
+          <h3 class="role">Finance Manager</h3>
+          <h4 class="name">Nur Syameera Binti Mohd Fauzi</h4>
+          <p>Ensuring the financial health of Lumiere Cafe, our Finance Manager oversees budgeting, planning, and resource allocation, allowing us to grow sustainably and responsibly.</p>
+        </div>
+        <div class="team-card">
+          <a href="images/Fatin.jpg" target="_blank">
+             <img src="images/Fatin.jpg" alt="Sale Manager"></a>
+          <h3 class="role">Sale Manager</h3>
+          <h4 class="name">Fatin Nur Zulaika Binti Fairul Nizam</h4>
+          <p>Focused on delivering value to our customers, the Sales Manager leads our efforts to build lasting relationships and ensure our offerings meet the needs of the community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+<footer> 
+  <div class="info"> 
+      <h3>Cafe Lumière</h3> 
+      <p>50, Jalan Stesen,</p> 
+      <p>45000 Kuala Selangor, Selangor </p> 
+      <p>Malaysia</p> 
+      <p>📧 <a href="mailto:adlinaamran@gmail.com?">Send us e-mail</a></p> 
+      <p>📞 <a href="tel:+61383766284">+61 (0) 3 8376 6284</a></p> 
+  </div> 
+   
+  <div class="center"> 
+      <p> Follow Us on Social Media for more information </p> 
+  </div> 
+
+  <div class="social-media"> 
+      <a href="https://facebook.com" target="_blank"><img src="images/facebook (1).png" alt="Facebook"></a> 
+      <a href="https://www.instagram.com/sweet_batikluxe/" target="_blank"><img src="images/instagram.jpg" alt="Instagram"></a> 
+      <a href="https://wa.link/0578p9" target="_blank"><img src="images/icon whatsapp.png" alt="Whatsapp"></a> 
+  </div> 
+</div> 
+
+<script> 
+  document.querySelectorAll('nav a').forEach(anchor => { 
+      anchor.addEventListener('click', function(e) { 
+          e.preventDefault(); 
+          document.querySelector(this.getAttribute('href')).scrollIntoView({ 
+              behavior: 'smooth' 
+          }); 
+      }); 
+  }); 
+
+  document.getElementById('contactForm').addEventListener('submit', function(e) { 
+      e.preventDefault(); 
+      const name = this.name.value.trim(); 
+      const email = this.email.value.trim(); 
+      const subject = this.subject.value.trim(); 
+      const message = this.message.value.trim(); 
+
+      if (!name || !email || !subject || !message) { 
+          alert('All fields are required!'); 
+          return; 
+      } 
+      alert('Thank you for contacting us!'); 
+      this.reset(); 
+  }); 
+
+</script>
+</footer>
+</body>
+</html>
+

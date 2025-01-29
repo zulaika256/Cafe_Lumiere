@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Join Our Team | Cafe Lumier</title>
+  <link rel="stylesheet" href="interfacejob.css">
+</head>
+<body>
+
+  <header>
+    <h1>Join Our Team</h1>
+    <p><i>"Discover a place where passion meets opportunity"</i></p>
+  </header>
+<p class="animated-text"> Come and Join Us - Come and Join Us - Come and Join Us - Come and Join Us - Come and Join Us - Come and Join Us - Come and Join Us</p>
+
+  <div class="container">
+
+    <div class="community-box">
+      <h2>Lets Be Part of Our Team</h2>
+      <p>
+       <b>Hi, Lumière Lovelies!</b>At Cafe Lumière , we value growth, creativity, and collaboration. Join us to explore exciting career opportunities in a supportive and innovative environment.
+      </p>
+      <a href="apply_job.html" class="apply-button">Apply Now</a>
+    </div>
+
+    <div class="offer-box">
+      <h2>WHAT DO WE OFFER?</h2>
+      <div class="image-row">
+        <div class="image-container">
+          <a href="apply_job.html">
+            <img src="images/barista.jpg" alt="Barista" class="image">
+          </a>
+          <div class="overlay">
+            <div class="text">INTERESTED TO BE A BARISTA?<br>CLICK TO APPLY!</div>
+          </div>
+        </div>
+        <div class="image-container">
+          <a href="apply_job.html">
+            <img src="images/waiter.jpg" alt="Waiter/Waitress" class="image">
+          </a>
+          <div class="overlay">
+            <div class="text">INTERESTED TO BE A WAITER?<br>CLICK TO APPLY!</div>
+          </div>
+        </div>
+        <div class="image-container">
+          <a href="apply_job.html">
+            <img src="images/kitchen.jpg" alt="Kitchen Staff" class="image">
+          </a>
+          <div class="overlay">
+            <div class="text">INTERESTED TO BE A KITCHEN STAFF?<br>CLICK TO APPLY!</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="info">
+        <h3>Cafe Lumière</h3>
+        <p>50, Jalan Stesen,</p>
+        <p>45000 Kuala Selangor, Selangor </p>
+        <p>Malaysia</p>
+        <p>📧 <a href="mailto:adlinaamran@gmail.com?">Send us e-mail</a></p>
+        <p>📞 <a href="tel:+61383766284">+61 (0) 3 8376 6284</a></p>
+    </div>
+    
+    <div class="center">
+        <p> Follow Us on Social Media for more information </p>
+    </div>
+
+    <div class="social-media">
+        <a href="https://facebook.com" target="_blank"><img src="images/icon fb.webp" alt="Facebook"></a>
+        <a href="https://www.instagram.com/sweet_batikluxe/" target="_blank"><img src="images/icon ig.webp" alt="Instagram"></a>
+        <a href="https://wa.link/0578p9" target="_blank"><img src="images/icon whatsapp.png" alt="Whatsapp"></a>
+    </div>
+</div>
+
+<script>
+
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = this.name.value.trim();
+        const email = this.email.value.trim();
+        const subject = this.subject.value.trim();
+        const message = this.message.value.trim();
+
+        if (!name || !email || !subject || !message) {
+            alert('All fields are required!');
+            return;
+        }
+        alert('Thank you for contacting us!');
+        this.reset();
+    });
+</script>
+</footer>
+</body>
+</html>
+

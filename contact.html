@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Lumière Cafe</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <div class="content">
+        <img src="images/logo.jpg" width="250" style="border-radius: 60%;"  alt="Icon" />
+        <h1>Contact Us</h1>
+        <hr style="width: 50px; border: 1px solid #b08a64; margin: 1rem auto;">
+        
+        <form id="contactForm">
+            <input type="text" name="name" placeholder="Your name">
+            <input type="email" name="email" placeholder="Your e-mail">
+            <input type="text" name="subject" placeholder="Subject" style="grid-column: span 2;">
+            <textarea name="message" rows="5" placeholder="Message"></textarea>
+            <button type="submit" style="font-family: 'Times New Roman', Times, serif;">Send Message</button>
+        </form>
+
+        <div class="info">
+            <h3>Cafe Lumière</h3>
+            <p>50, Jalan Stesen,</p>
+            <p>Kuala Selangor 45000</p>
+            <p>Malaysia</p>
+            <p>📧 <a href="mail to:adlinaamran@gmail.com?">Send us e-mail</a></p>
+            <p>📞 <a href="tel:01116700793">60 1116700793</a></p>
+        </div>
+        <br>
+        <div align="center">
+            <h4>Click the location below to view our cafe</h4>
+            <img src="images/location cafe 1.png" usemap="#image-map">
+
+            <map name="image-map">
+                <area target="_blank" alt="Cafe Lumiere" title="Cafe Lumiere" href="https://www.waze.com/en-GB/live-map/directions/my/selangor/kuala-selangor/cafe-lumiere-kuala-selangor?navigate=yes&amp;utm_campaign=waze_website&amp;utm_source=waze_website&amp;utm_medium=lm_share_location&amp;to=place.ChIJw5f2AVnzzDERmRrvW3d366c" coords="349,177,87" shape="circle">
+            </map>
+        </div>
+        
+        <div class="center">
+            <p> Follow Us on Social Media for more information </p>
+        </div>
+
+        <div class="social-media">
+            <a href="https://facebook.com" target="_blank"><img src="images/icon fb.webp" alt="Facebook"></a>
+            <a href="https://www.instagram.com/sweet_batikluxe/" target="_blank"><img src="images/icon ig.webp" alt="Instagram"></a>
+            <a href="https://wa.link/0578p9" target="_blank"><img src="images/icon whatsapp.png" alt="Whatsapp"></a>
+        </div>
+    </div>
+
+    <script>
+ 
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = this.name.value.trim();
+            const email = this.email.value.trim();
+            const subject = this.subject.value.trim();
+            const message = this.message.value.trim();
+
+            if (!name || !email || !subject || !message) {
+                alert('All fields are required!');
+                return;
+            }
+            alert('Thank you for contacting us!');
+            this.reset();
+        });
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
+
+
+

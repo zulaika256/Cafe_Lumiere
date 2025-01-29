@@ -1,0 +1,197 @@
+ body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background: #f5ebe1;
+    color: #444;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+header {
+    background-image: url('images/background6.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+header h1 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 3.5rem;
+    margin: 0;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+header p {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    font-weight: lighter;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    color: #e1cebdc7;
+}
+.container {
+    padding: 40px 20px;
+    flex-grow: 1; 
+}
+.community-box {
+    background-image: url(images/background7.webp);
+    background-size: cover;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 30px auto;
+    max-width: 800px;
+    animation-name: example;
+    animation-duration: 5s;
+}
+.community-box h2 {
+    color: #fffdfd;
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+.community-box p {
+    font-size: 1.1rem;
+    color: #1d0e01;
+    margin-bottom: 20px;
+ }
+.apply-button {
+    display: inline-block;
+    background-color: #200e04fb;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+.apply-button:hover {
+    background-color: #e4ba3c;
+}
+.offer-box {
+    background-image: url(images/background9.jpg);
+    background-size: cover;  
+    background-position: center; 
+    padding: 30px;
+    margin-top: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;  
+}
+.offer-box h2 {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: #f1efec;
+    font-family: 'Times New Roman', Times, serif
+}
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.image-container {
+    width: 220px;
+    height: 220px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.10s ease;
+}
+.image-container:hover {
+    transform: scale(1.05);
+}
+.image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(182, 119, 82, 0.685);
+    height: 50%;
+    transition: height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+.image-container:hover .overlay {
+    height: 100%;
+    opacity: 1;
+}
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+@keyframes example {
+    from { background-color: #f0c9ec ; }
+    to { background-color: rgb(179, 155, 155) ; }
+}
+.info {
+    text-align: left;
+    margin-top: 3rem;
+}
+.info p {
+    margin: 0.5rem 0;
+    font-size: 1rem;
+}
+.info a {
+    color: #8c6d4b;
+    text-decoration: none;
+}
+.social-media {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.social-media a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+}
+.social-media a img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    margin-top: 3rem;
+    width: 100%;
+}
+@keyframes slideText {
+  0% {
+    transform: translateX(-90%); 
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%); 
+  }
+}
+.animated-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px; 
+    font-weight: bold;
+    color: #5a1616dc; 
+    animation: slideText 10s ease-in-out infinite;  
+}
